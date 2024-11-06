@@ -21,14 +21,15 @@ import { ResultadoEncuestaComponent } from './resultado-encuesta/resultado-encue
 import { AsignacionDeOrientadorComponent } from './asignacion-de-orientador/asignacion-de-orientador.component';
 import { ResultadosGuardadosComponent } from './resultados-guardados/resultados-guardados.component';
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 export const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'signup', component: SignUpComponent },
+  { path: 'signin', component: SignInComponent },
   { path: 'home', component: ForoStudentComponent },
   { path: 'forums', component: ForoStudentComponent},
   { path: 'community', component: ForoStudentComponent },
-  { path: 'forums', component: ForoStudentComponent },
   { path: 'forum-post', component: ForoStudentComponent},
   { path: 'universidades', component: InfoInstitucionesComponent },
   { path: 'error', component: InfoInstitucionesComponent },

@@ -5,10 +5,10 @@
             <h2>Jon Doe</h2>
         </div>
         <div class="menu">
-            <button routerLink="/test">Test vocacional</button>
-            <button routerLink="/community">Comunidad</button>
-            <button routerLink="/explorer">Explorador de carreras</button>
-            <button routerLink="/appointment">Solicitar cita</button>
+            <button (click)="navigateToTest()">Test vocacional</button>
+            <button (click)="navigateToCommunity()">Comunidad</button>
+            <button (click)="navigateToExplorer()">Explorador de carreras</button>
+            <button (click)="navigateToSolicitarCita()">Solicitar cita</button>
         </div>
     </div>
 </div>
@@ -17,9 +17,9 @@
     <div class="frame">
         <h2>Comunidad</h2>
         <div class="menu">
-            <button routerLink="/forums">Foros</button>
-            <button routerLink="/workshops">Talleres vocacionales</button>
-            <button routerLink="/stories">Relatos laborales</button>
+            <button (click)="navigateToForos()">Foros</button>
+            <button (click)="navigateToWorkShops()">Talleres vocacionales</button>
+            <button (click)="navigateToStories()">Relatos laborales</button>
         </div>
     </div>
 

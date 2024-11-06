@@ -17,8 +17,8 @@ export class SignUpComponent {
     this._router.navigate(['']);
   }
 
-  navigateToLogin() {
-    this._router.navigate(['main'])
+  navigateToSignIn() {
+    this._router.navigate(['signin'])
   }
 
   completeSignUp() {

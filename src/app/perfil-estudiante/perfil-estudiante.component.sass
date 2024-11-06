@@ -1,0 +1,73 @@
+$primary-color: #01A7C2
+$secondary-color: #333
+$input-border-color: #ddd
+$button-hover-color: darken($primary-color, 10%)
+$border-radius: 10px
+$font-family: 'Poppins', sans-serif
+
+.profile-container
+  max-width: 500px
+  margin: 3rem auto
+  padding: 2rem
+  background-color: #fff
+  border-radius: $border-radius
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+  border: 1px solid $input-border-color
+  font-family: $font-family
+  box-sizing: border-box
+
+  h2
+    text-align: center
+    color: $secondary-color
+    margin-bottom: 1.5rem
+    font-size: 1.75rem
+
+  label
+    display: block
+    font-weight: 600
+    color: $secondary-color
+    margin: 1rem 0 0.3rem
+
+  input, textarea
+    width: 100%
+    padding: 0.75rem
+    border: 1px solid $input-border-color
+    border-radius: $border-radius
+    background-color: #f9f9f9
+    font-size: 1rem
+    font-family: $font-family
+    box-sizing: border-box
+    transition: border-color 0.3s ease, box-shadow 0.3s ease
+
+    &:focus
+      outline: none
+      border-color: $primary-color
+      box-shadow: 0 0 5px rgba(1, 167, 194, 0.3)
+
+  textarea
+    min-height: 100px
+    resize: vertical
+
+  button
+    display: block
+    width: 100%
+    padding: 0.75rem
+    margin-top: 1.5rem
+    color: #fff
+    background-color: $primary-color
+    border: none
+    border-radius: $border-radius
+    font-size: 1.1rem
+    font-weight: bold
+    text-transform: uppercase
+    cursor: pointer
+    transition: background-color 0.3s ease
+    font-family: $font-family
+    box-sizing: border-box
+
+    &:hover
+      background-color: $button-hover-color
+
+    &:disabled
+      background-color: #ccc
+      cursor: not-allowed

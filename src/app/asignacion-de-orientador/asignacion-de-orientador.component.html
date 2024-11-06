@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="session-time">
+      {{ session.date | date:'EEEE d MMMM, h:mm a' }}
+    </div>
+    <div class="student-name">
+      {{ session.studentName }}
+    </div>
+    <div>
+      <span class="session-type">{{ session.type }}</span>
+      <span class="duration">{{ session.duration }} minutos</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Próximas Sesiones</h2>
+    <div *ngFor="let session of sessions">
+      <app-session-card [session]="session"></app-session-card>
+    </div>
+    <p *ngIf="sessions.length === 0">No hay sesiones programadas</p>
+  </div>
+
+  <div>
+    <header style="background: #2563eb; color: white; padding: 1rem;">
+      <div class="container">
+        <h1>Portal del Orientador</h1>
+      </div>
+    </header>
+    <app-sessions-list></app-sessions-list>
+  </div>
+  
+    

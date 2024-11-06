@@ -39,3 +39,5 @@ Thumbs.db
 # Otros archivos innecesarios
 package-lock.json
 yarn.lock
+
+.firebase/

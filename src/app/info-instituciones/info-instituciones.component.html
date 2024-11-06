@@ -1,0 +1,50 @@
+<div *ngIf="!showError">
+    <h2>Universidades disponibles</h2>
+    <div *ngFor="let universidad of universidades" [ngClass]="getColorClass(universidad)">
+      <p>{{ universidad.nombre }}</p>
+      <button (click)="mostrarDetalles(universidad)">Detalles...</button>
+    </div>
+  </div>
+  
+  <div *ngIf="showError">
+    <div class="container">
+      <header class="header">
+        <img class="profile-pic" src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png" alt="Foto de perfil">
+        <div class="icons">
+          <i class="icon-bell"></i>
+          <i class="icon-menu"></i>
+        </div>
+      </header>
+    
+      <div class="search-bar">
+        <input type="text" placeholder="BUSCAR">
+        <button class="search-button">
+          <i class="icon-search"></i>
+        </button>
+      </div>
+    
+      <div class="university-card">
+        Universidad Peruana de Ciencias Aplicadas
+      </div>
+    
+      <h2>Carreras recomendadas</h2>
+    
+      <div class="info-box">
+        <label>Ubicación</label>
+        <p>Monterrico</p>
+      </div>
+    
+      <div class="info-box">
+        <label>Costos</label>
+        <p>2123.90 x cuota</p>
+      </div>
+    
+      <div class="info-box">
+        <label>Programas</label>
+        <p>Arizona</p>
+      </div>
+    </div>
+    
+    <button (click)="volver()">Volver</button>
+  </div>
+  

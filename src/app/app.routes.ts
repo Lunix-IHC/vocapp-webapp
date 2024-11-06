@@ -1,6 +1,13 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ForoStudentComponent } from './foro-student/foro-student.component'; 
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { InfoInstitucionesComponent } from './info-instituciones/info-instituciones.component';
+import { AppComponent } from './app.component';
+
 import { SolicitarCitaComponent } from './solicitar-cita/solicitar-cita.component';
 import { RegistroOrientadorComponent } from './registro-orientador/registro-orientador.component';
 
@@ -15,10 +22,16 @@ import { AsignacionDeOrientadorComponent } from './asignacion-de-orientador/asig
 import { ResultadosGuardadosComponent } from './resultados-guardados/resultados-guardados.component';
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
 
-
 export const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'signup', component: SignUpComponent },
+  { path: 'home', component: ForoStudentComponent },
+  { path: 'forums', component: ForoStudentComponent},
+  { path: 'community', component: ForoStudentComponent },
+  { path: 'forums', component: ForoStudentComponent },
+  { path: 'forum-post', component: ForoStudentComponent},
+  { path: 'universidades', component: InfoInstitucionesComponent },
+  { path: 'error', component: InfoInstitucionesComponent },
   { path: 'solicitar-cita', component: SolicitarCitaComponent },
   { path: 'registro-orientador', component: RegistroOrientadorComponent },
   { path: 'acceso-test', component: AccesoTestComponent},
@@ -32,3 +45,16 @@ export const routes: Routes = [
   { path: 'resultados-guardados', component: ResultadosGuardadosComponent },
   { path: 'perfil-estudiante', component: PerfilEstudianteComponent },
 ];
+
+@NgModule({
+  declarations: [
+    ForoStudentComponent,
+    InfoInstitucionesComponent,
+  ],
+  imports: [
+    BrowserModule,
+    CommonModule
+  ],
+  providers: [],
+})
+export class AppModule { }

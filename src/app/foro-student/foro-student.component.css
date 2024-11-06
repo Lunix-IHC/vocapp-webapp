@@ -6,7 +6,7 @@
   background-color: #ffffff;
   max-width: 400px;
   margin: 0 auto;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: arial
 }
 
 .profile {
@@ -23,8 +23,8 @@
 
 h2 {
   text-align: center;
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 2rem;
+  color: #009FB7;
   font-weight: bold;
 }
 
@@ -38,7 +38,8 @@ h2 {
 button {
   padding: 15px;
   border: none;
-  background-color: #007bff;
+  min-height: 100px;
+  background-color: #01A7C2;
   color: #fff;
   font-size: 0.9rem;
   font-weight: 500;
@@ -49,8 +50,28 @@ button {
   justify-content: center;
 }
 
+.volver {
+  border: none;
+  min-height: 50px;
+  max-width: 100px;
+  background-color: #01A7C2;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.volver:hover {
+  background-color: #00bad7;
+}
+
 button:hover {
-  background-color: #0056b3;
+  background-color: #00bad7;
 }
 
 /* Botones de acciones dentro del foro */
@@ -71,6 +92,11 @@ button:hover {
 
 .forum-post button:hover {
   opacity: 0.9;
+}
+
+.ui.minimal.comments h3{
+  color:#009FB7;
+  font-size: 2rem;
 }
 
 /* Comentarios en el foro */
@@ -134,7 +160,7 @@ button:hover {
   margin-top: 10px;
   font-size: 1rem;
   border-radius: 8px;
-  background-color: #007bff;
+  background-color: #009FB7;
   color: #fff;
   display: flex;
   align-items: center;
@@ -149,7 +175,7 @@ button:hover {
   margin-top: 10px;
   font-size: 1rem;
   border-radius: 8px;
-  background-color: #007bff;
+  background-color: #009FB7;
   color: #fff;
   display: flex;
   align-items: center;
@@ -159,10 +185,10 @@ button:hover {
 }
 
 .ui.reply.form .ui.blue.labeled.submit.icon.button:hover {
-  background-color: #0056b3;
+  background-color: #00bad7;;
 }
 .ui.reply.form .ui.blue.labeled.submit.icon.button2:hover {
-  background-color: #0056b3;
+  background-color: #00bad7;
 }
 
 

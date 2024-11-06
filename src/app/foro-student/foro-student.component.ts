@@ -18,6 +18,10 @@ export class ForoStudentComponent implements OnInit {
     });
   }
 
+  navigateToHome() {
+    this._router.navigate(['home']);
+  }
+
   navigateToTest() {
     this._router.navigate(['acceso-test']);
   }
@@ -27,7 +31,7 @@ export class ForoStudentComponent implements OnInit {
   }
 
   navigateToExplorer() {
-    this._router.navigate(['explorer']);
+    this._router.navigate(['universidades']);
   }
 
   navigateToSolicitarCita() {
@@ -44,5 +48,8 @@ export class ForoStudentComponent implements OnInit {
 
   navigateToStories() {
     this._router.navigate(['historias']);
+  }
+  navigateToForumPost() {
+    this._router.navigate(['forum-post']);
   }
 }

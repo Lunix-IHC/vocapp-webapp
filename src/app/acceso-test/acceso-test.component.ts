@@ -12,8 +12,15 @@ export class AccesoTestComponent {
 
   constructor(private _router: Router) { }
 
+  navigateToHome() {
+    this._router.navigate(['home'])
+  }
+
   navigateToTest() {
     this._router.navigate(['test-1'])
+  }
+  navigateToResultadoEncuesta() {
+    this._router.navigate(['resultado-encuesta'])
   }
 
 }

@@ -18,4 +18,8 @@ export class ResultadoEncuestaComponent {
   navigateToAccesoTest() {
     this._router.navigate(['acceso-test']);
   }
+  
+  navigateToResultadosGuardados() {
+    this._router.navigate(['resultados-guardados']);
+  }
 }

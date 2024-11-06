@@ -6,11 +6,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { InfoInstitucionesComponent } from './info-instituciones/info-instituciones.component';
-import { AppComponent } from './app.component';
-
 import { SolicitarCitaComponent } from './solicitar-cita/solicitar-cita.component';
 import { RegistroOrientadorComponent } from './registro-orientador/registro-orientador.component';
-
 import { AccesoTestComponent } from './acceso-test/acceso-test.component';
 import { Test1Component } from './test-1/test-1.component';
 import { Test2Component } from './test-2/test-2.component';

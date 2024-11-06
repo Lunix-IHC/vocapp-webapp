@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Solicitar Cita con Orientador</h2>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="student-name">Nombre del Estudiante *:</label>
+            <input type="text" id="student-name" name="student-name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="advisor">Orientador *:</label>
+            <select id="advisor" name="advisor" required>
+                <option value="">Seleccione un orientador</option>
+                <option value="orientador1">Orientador 1</option>
+                <option value="orientador2">Orientador 2</option>
+                <option value="orientador3">Orientador 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Fecha de la Cita *:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Hora de la Cita *:</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+
+        <div class="form-group">
+            <label for="comments">Comentarios Adicionales *:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+
+        <input type="submit" value="Solicitar Cita">
+    </form>
+</div>

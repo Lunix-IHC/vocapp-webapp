@@ -1,0 +1,23 @@
+<div class="profile-container">
+    <h2>Perfil del Estudiante</h2>
+
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+        <label for="name">Nombre:</label>
+        <input id="name" type="text" formControlName="name" placeholder="Nombre completo" />
+
+        <label for="age">Edad:</label>
+        <input id="age" type="number" formControlName="age" placeholder="Edad" />
+
+        <label for="email">Correo Electrónico:</label>
+        <input id="email" type="email" formControlName="email" placeholder="ejemplo@correo.com" />
+
+        <label for="grade">Grado:</label>
+        <input id="grade" type="text" formControlName="grade" placeholder="Grado del estudiante" />
+
+        <label for="bio">Biografía:</label>
+        <textarea id="bio" formControlName="bio" placeholder="Escribe una breve biografía"></textarea>
+
+        <button type="submit" [disabled]="studentForm.invalid">Guardar</button>
+    </form>
+</div>
+  

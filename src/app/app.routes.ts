@@ -5,6 +5,7 @@ import { ForoStudentComponent } from './foro-student/foro-student.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+
 import { InfoInstitucionesComponent } from './info-instituciones/info-instituciones.component';
 import { SolicitarCitaComponent } from './solicitar-cita/solicitar-cita.component';
 import { RegistroOrientadorComponent } from './registro-orientador/registro-orientador.component';
@@ -20,6 +21,7 @@ import { ResultadosGuardadosComponent } from './resultados-guardados/resultados-
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
+
 export const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'signup', component: SignUpComponent },
@@ -28,8 +30,10 @@ export const routes: Routes = [
   { path: 'forums', component: ForoStudentComponent},
   { path: 'community', component: ForoStudentComponent },
   { path: 'forum-post', component: ForoStudentComponent},
+
   { path: 'universidades', component: InfoInstitucionesComponent },
   { path: 'error', component: InfoInstitucionesComponent },
+
   { path: 'solicitar-cita', component: SolicitarCitaComponent },
   { path: 'registro-orientador', component: RegistroOrientadorComponent },
   { path: 'acceso-test', component: AccesoTestComponent},
@@ -47,12 +51,16 @@ export const routes: Routes = [
 @NgModule({
   declarations: [
     ForoStudentComponent,
+
     InfoInstitucionesComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule
   ],
+
+  providers: []
+
   providers: [],
 })
 export class AppModule { }

@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 export class ResultadoEncuestaComponent {
   constructor(private _router: Router) { }
 
+  navigateToResultadoGuardado() {
+    this._router.navigate(['resultados-guardados']);
+  }
+
   navigateToAccesoTest() {
     this._router.navigate(['acceso-test']);
   }

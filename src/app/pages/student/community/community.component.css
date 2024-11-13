@@ -1,99 +1,101 @@
 /* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  .top {
-    display: flex;
-    text-align: left;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.top {
+  max-width: 1340px;
+  width: 100%;
+  display: flex;
+  text-align: left;
 }
 
 .back-arrow {
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
 }
 
 h1 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
 }
 
 
 p {
-    color: #777;
-    margin-bottom: 20px;
+  color: #777;
+  margin-bottom: 20px;
 }
   
-  /* Contenido principal */
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .content p {
-    color: #000000;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos de los botones de foro */
-  /* Estilos de los botones de foro */
-  .forum-container {
-    max-width: 1600px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .forum-button {
-    width: 400px;
-    height: 200px;
-    background-color: #01A7C2;
-    color: rgb(0, 0, 0);
-    border: none; /* Eliminamos el borde estándar */
-    border-radius: 15px; /* Bordes curvados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor del botón */
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición suave */
-  }
-  
-  /* Efecto al pasar el ratón */
-  .forum-button:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
-    transform: translateY(-2px); /* Mueve el botón ligeramente hacia arriba al hacer hover */
-  }
-  
-  /*Imagen boton*/
-  .image-button {
-    background: none; /* Eliminamos el fondo del botón */
-    border: none; /* Eliminamos el borde */
-    padding: 0; /* Eliminamos cualquier relleno */
-    cursor: pointer; /* Cambiamos el cursor para mostrar que es clickeable */
-  }
-  
-  .image-button img {
-    width: 100%; /* Asegura que la imagen ocupe todo el espacio del botón */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 10px; /* Si quieres bordes redondeados */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para la imagen */
-  }
-  
-  /* Efecto al presionar */
-  .image-button:active img {
-    transform: scale(0.95); /* Efecto de "presionar" la imagen */
-    opacity: 0.8; /* Cambio de opacidad al hacer clic */
-  }
+/* Contenido principal */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los botones de foro */
+/* Estilos de los botones de foro */
+.forum-container {
+  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.forum-button {
+  width: 400px;
+  height: 200px;
+  background-color: #01A7C2;
+  color: rgb(0, 0, 0);
+  border: none; /* Eliminamos el borde estándar */
+  border-radius: 15px; /* Bordes curvados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor del botón */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón */
+.forum-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+  transform: translateY(-2px); /* Mueve el botón ligeramente hacia arriba al hacer hover */
+}
+
+/*Imagen boton*/
+.image-button {
+  background: none; /* Eliminamos el fondo del botón */
+  border: none; /* Eliminamos el borde */
+  padding: 0; /* Eliminamos cualquier relleno */
+  cursor: pointer; /* Cambiamos el cursor para mostrar que es clickeable */
+}
+
+.image-button img {
+  width: 100%; /* Asegura que la imagen ocupe todo el espacio del botón */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Si quieres bordes redondeados */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para la imagen */
+}
+
+/* Efecto al presionar */
+.image-button:active img {
+  transform: scale(0.95); /* Efecto de "presionar" la imagen */
+  opacity: 0.8; /* Cambio de opacidad al hacer clic */
+}

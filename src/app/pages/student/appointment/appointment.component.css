@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+
+.top {
+    display: flex;
+    text-align: left;
+}
+
+.back-arrow {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -38,10 +62,6 @@ nav {
     background-color: #f0f0f0;
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-left: 1rem;
-}
 
 .subtitle {
     font-size: 1.2rem;

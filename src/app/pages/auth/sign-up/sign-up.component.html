@@ -1,67 +1,69 @@
-<div class="signup-container" *ngIf="!completed; else confirmationMessage" [formGroup]="signupForm">
-    <div class="header">
-        <img src="assets/images/Logo.png" alt="Logo" class="logo" />
-        <p>Regístrate</p>
-    </div>
-    <div class="body">
-        <div class="field">
-            <label>Nombres</label>
-            <input type="text" formControlName="firstName" placeholder="Ingrese nombres">
-            <div *ngIf="firstName?.invalid && firstName?.touched" class="error">
-                <small *ngIf="firstName?.errors?.['required']">Nombre es requerido</small>
-                <small *ngIf="firstName?.errors?.['minlength']">Nombre debe tener al menos 2 caracteres</small>
-            </div>
-        </div>
-        <div class="field">
-            <label>Apellidos</label>
-            <input type="text" formControlName="lastName" placeholder="Ingrese apellidos">
-            <div *ngIf="lastName?.invalid && lastName?.touched" class="error">
-                <small *ngIf="lastName?.errors?.['required']">Apellido es requerido</small>
-                <small *ngIf="lastName?.errors?.['minlength']">Apellido debe tener al menos 2 caracteres</small>
-            </div>
-        </div>
-        <div class="field">
-            <label>Correo</label>
-            <input type="text" formControlName="email" placeholder="Ingrese correo">
-            <div *ngIf="email?.invalid && email?.touched" class="error">
-                <small *ngIf="email?.errors?.['required']">Correo es requerido</small>
-                <small *ngIf="email?.errors?.['email']">Correo no válido</small>
-            </div>
-        </div>
-        <div class="field">
-            <label>Contraseña</label>
-            <input type="password" formControlName="password" placeholder="Ingrese contraseña">
-            <div *ngIf="password?.invalid && password?.touched" class="error">
-                <small *ngIf="password?.errors?.['required']">Contraseña es requerida</small>
-                <small *ngIf="password?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres</small>
-            </div>
-        </div>
-        <div class="field">
-            <label>Confirmar contraseña</label>
-            <input type="password" formControlName="confirmPassword" placeholder="Confirme contraseña">
-            <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="error">
-                <small *ngIf="confirmPassword?.errors?.['required']">Confirmación de contraseña es requerida</small>
-                <small *ngIf="signupForm.errors?.['mismatch']">Las contraseñas no coinciden</small>
-            </div>
-        </div>
-    </div>
-    <div class="buttons">
-        <input class="signup" type="button" value="Registrarse" (click)="completeSignUp()">
-        <input class="cancel" type="button" value="Cancelar" (click)="navigateToMain()">
-    </div>
-</div>
-
-<ng-template #confirmationMessage>
-    <div class="signup-container">
+<div class="container">
+    <div class="signup-container" *ngIf="!completed; else confirmationMessage" [formGroup]="signupForm">
         <div class="header">
             <img src="assets/images/Logo.png" alt="Logo" class="logo" />
-            <p>Confirmación</p>
+            <p>Regístrate</p>
         </div>
-        <div class="message-box">
-            <p>Su cuenta ha sido verificada correctamente. Por favor inicie sesión para continuar.</p>
+        <div class="body">
+            <div class="field">
+                <label>Nombres</label>
+                <input type="text" formControlName="firstName" placeholder="Ingrese nombres">
+                <div *ngIf="firstName?.invalid && firstName?.touched" class="error">
+                    <small *ngIf="firstName?.errors?.['required']">Nombre es requerido</small>
+                    <small *ngIf="firstName?.errors?.['minlength']">Nombre debe tener al menos 2 caracteres</small>
+                </div>
+            </div>
+            <div class="field">
+                <label>Apellidos</label>
+                <input type="text" formControlName="lastName" placeholder="Ingrese apellidos">
+                <div *ngIf="lastName?.invalid && lastName?.touched" class="error">
+                    <small *ngIf="lastName?.errors?.['required']">Apellido es requerido</small>
+                    <small *ngIf="lastName?.errors?.['minlength']">Apellido debe tener al menos 2 caracteres</small>
+                </div>
+            </div>
+            <div class="field">
+                <label>Correo</label>
+                <input type="text" formControlName="email" placeholder="Ingrese correo">
+                <div *ngIf="email?.invalid && email?.touched" class="error">
+                    <small *ngIf="email?.errors?.['required']">Correo es requerido</small>
+                    <small *ngIf="email?.errors?.['email']">Correo no válido</small>
+                </div>
+            </div>
+            <div class="field">
+                <label>Contraseña</label>
+                <input type="password" formControlName="password" placeholder="Ingrese contraseña">
+                <div *ngIf="password?.invalid && password?.touched" class="error">
+                    <small *ngIf="password?.errors?.['required']">Contraseña es requerida</small>
+                    <small *ngIf="password?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres</small>
+                </div>
+            </div>
+            <div class="field">
+                <label>Confirmar contraseña</label>
+                <input type="password" formControlName="confirmPassword" placeholder="Confirme contraseña">
+                <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="error">
+                    <small *ngIf="confirmPassword?.errors?.['required']">Confirmación de contraseña es requerida</small>
+                    <small *ngIf="signupForm.errors?.['mismatch']">Las contraseñas no coinciden</small>
+                </div>
+            </div>
         </div>
         <div class="buttons">
-            <input class="signup" type="button" value="Iniciar Sesión" (click)="navigateToSignIn()">
+            <input class="signup" type="button" value="Registrarse" (click)="completeSignUp()">
+            <input class="cancel" type="button" value="Cancelar" (click)="navigateToMain()">
         </div>
     </div>
-</ng-template>
+    
+    <ng-template #confirmationMessage>
+        <div class="signup-container">
+            <div class="header">
+                <img src="assets/images/Logo.png" alt="Logo" class="logo" />
+                <p>Confirmación</p>
+            </div>
+            <div class="message-box">
+                <p>Su cuenta ha sido verificada correctamente. Por favor inicie sesión para continuar.</p>
+            </div>
+            <div class="buttons">
+                <input class="signup" type="button" value="Iniciar Sesión" (click)="navigateToSignIn()">
+            </div>
+        </div>
+    </ng-template>
+</div>

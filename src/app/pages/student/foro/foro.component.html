@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="chat-input-area">
-        <input type="text" [(ngModel)]="newMessage" placeholder="Escribe un mensaje">
+        <input type="text" (keydown.enter)="sendMessage()" [(ngModel)]="newMessage" placeholder="Escribe un mensaje">
         <button class="send-button" (click)="sendMessage()">➤</button>
       </div>
     </div>

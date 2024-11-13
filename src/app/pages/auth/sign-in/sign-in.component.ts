@@ -11,30 +11,37 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './sign-in.component.css'
 })
 export class SignInComponent implements OnInit {
-  // loginForm: FormGroup;  
-  
-  // constructor(private fb: FormBuilder) {  
-  //   this.loginForm = this.fb.group({  
-  //     email: ['', [Validators.required, Validators.email]],  
-  //     password: ['', Validators.required]  
-  //   });  
-  // }  
-  
-  ngOnInit(): void {}  
-  
-  // onSubmit(): void {  
-  //   if (this.loginForm.valid) {  
-  //     console.log(this.loginForm.value);
-  //   }  
-  // }
+  signInForm: FormGroup;
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private fb: FormBuilder) {}
+  
+  ngOnInit(): void {
+    this.signInForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
+
+  get email() {
+    return this.signInForm.get('email');
+  }
+
+  get password() {
+    return this.signInForm.get('password');
+  }
 
   navigateToMain() {
     this._router.navigate(['']);
   }
 
   SignIn() {
-    this._router.navigate(['home']);
+    if (this.signInForm.valid) {
+      // Aquí puedes agregar tu lógica de autenticación
+      console.log('Form válido');
+      this._router.navigate(['home']);
+    } else {
+      console.log('Form no válido');
+      this.signInForm.markAllAsTouched();  // Muestra mensajes de error en campos
+    }
   }
 }

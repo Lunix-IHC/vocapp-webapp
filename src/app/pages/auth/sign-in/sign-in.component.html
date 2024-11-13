@@ -1,4 +1,4 @@
-<div class="signin-container">
+<div class="signin-container" [formGroup]="signInForm">
     <div class="header">
         <img src="assets/images/Logo.png" alt="Logo" class="logo" />
         <p>Iniciar Sesión</p>
@@ -6,11 +6,19 @@
     <div class="body">
         <div class="field">
             <label>Correo</label>
-            <input type="text" placeholder="Ingrese correo">
+            <input type="text" formControlName="email" placeholder="Ingrese correo">
+            <div *ngIf="email?.invalid && email?.touched" class="error">
+                <small *ngIf="email?.errors?.['required']">Correo es requerido</small>
+                <small *ngIf="email?.errors?.['email']">Correo no válido</small>
+            </div>
         </div>
         <div class="field">
             <label>Contraseña</label>
-            <input type="password" placeholder="Ingrese contraseña">
+            <input type="password" formControlName="password" placeholder="Ingrese contraseña">
+            <div *ngIf="password?.invalid && password?.touched" class="error">
+                <small *ngIf="password?.errors?.['required']">Contraseña es requerida</small>
+                <small *ngIf="password?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres</small>
+            </div>
         </div>
     </div>
     <div class="buttons">

@@ -18,6 +18,7 @@ export const routes: Routes = [
         children: [
           { path: '', component: HomeComponent },
           { path: 'student', loadChildren: () => import('./pages/student/student.routes').then(x=>x.studentRoutes) },
+         
         ],
         canActivate: [AuthGuard]
     },

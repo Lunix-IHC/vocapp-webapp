@@ -1,1 +1,27 @@
-<p>test works!</p>
+<div class="container">
+    <main>
+        <div class="top">
+            <div class="back-arrow" >
+                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/test">
+            </div>
+            <div class="title">
+                <h1>Test</h1>
+                <p>Realiza tu test vocacional hoy</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <button (click)="navigateToTest()">Reanudar test</button>
+                <button (click)="navigateToTest()">Realizar nuevo test</button>
+                <button>Ver historial de resultados</button>
+            </div>
+            <div class="right">
+                <h2>Foros para estudiar</h2>
+                <button>Acerca de Arquitectura</button>
+                <button>Acerca de Ingeniería</button>
+                <button>Acerca de Medicina</button>
+                <button>Acerca de Psicología</button>
+            </div>
+        </div>
+    </main>
+</div>

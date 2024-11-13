@@ -9,11 +9,11 @@ import { InfoInstitucionesComponent } from './info-instituciones/info-institucio
 import { SolicitarCitaComponent } from './solicitar-cita/solicitar-cita.component';
 import { RegistroOrientadorComponent } from './registro-orientador/registro-orientador.component';
 import { AccesoTestComponent } from './acceso-test/acceso-test.component';
-import { Test1Component } from './test-1/test-1.component';
-import { Test2Component } from './test-2/test-2.component';
-import { Test3Component } from './test-3/test-3.component';
-import { Test4Component } from './test-4/test-4.component';
-import { Test5Component } from './test-5/test-5.component';
+import { Test1Component } from '../../../src/app/pages/student/test/test-1/test-1.component';
+import { Test2Component } from '../../../src/app/pages/student/test/test-2/test-2.component';
+import { Test3Component } from '../../../src/app/pages/student/test/test-3/test-3.component';
+import { Test4Component } from '../../../src/app/pages/student/test/test-4/test-4.component';
+import { Test5Component } from '../../../src/app/pages/student/test/test-5/test-5.component';
 import { ResultadoEncuestaComponent } from './resultado-encuesta/resultado-encuesta.component';
 import { AsignacionDeOrientadorComponent } from './asignacion-de-orientador/asignacion-de-orientador.component';
 import { ResultadosGuardadosComponent } from './resultados-guardados/resultados-guardados.component';

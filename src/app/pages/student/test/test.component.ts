@@ -10,6 +10,11 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class TestComponent {
   constructor(private _router: Router) { }
+
+  navigateToForo(){
+    this._router.navigate(['/home/student/foro'])
+  }
+
   navigateToTest(){
     this._router.navigate(['/home/student/preguntas'])
   }

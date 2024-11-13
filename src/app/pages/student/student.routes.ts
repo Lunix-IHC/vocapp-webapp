@@ -11,6 +11,7 @@ import { Test1Component } from './test/preguntas/test-1.component';
 
 
 
+
 export const studentRoutes: Routes = [
     {
         path: '',
@@ -22,8 +23,8 @@ export const studentRoutes: Routes = [
             {path: 'appointment', component:AppointmentComponent},
             {path: 'resultados-guardados', component:ResultadosGuardadosComponent},
             {path: 'foro', component:ForoComponent},
-            {path: 'preguntas', component:Test1Component}
-
+            {path: 'preguntas', component:Test1Component},
+            {path: 'Sesion', component: AppointmentComponent}
         ]
     },
 

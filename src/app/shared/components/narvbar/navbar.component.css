@@ -1,0 +1,15 @@
+.p-menubar {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.p-menubar .p-menuitem {
+  display: flex;
+  align-items: center;
+}
+
+.p-menubar .p-menuitem-link {
+  color: #343a40;
+  text-align: center;
+}

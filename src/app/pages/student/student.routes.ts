@@ -9,7 +9,6 @@ import { AppointmentComponent } from './appointment/appointment.component';
 export const studentRoutes: Routes = [
     {
         path: '',
-        component: StudentLayoutComponent,
         children: [
             {path: 'inicio', component:InicioComponent},
             {path: 'test', component:TestComponent},

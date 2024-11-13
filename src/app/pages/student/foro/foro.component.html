@@ -1,30 +1,26 @@
-
-    <div class="container">
-        <div class="sidebar">
-            <div class="back-button">←</div>
-            <button class="forum-button">Foro UPC</button>
-            <button class="forum-button">Foro ULima</button>
-            <button class="forum-button">Foro UP</button>
-            <button class="forum-button">Foro Ingeniería</button>
-            <button class="forum-button">Foro Ciencias de la Salud</button>
-            <button class="forum-button">Foro Arquitectura</button>
-        </div>
-
-        <div class="chat-area">
-            <div class="chat-header">Foro UPC</div>
-            <div class="chat-messages">
-                <div class="message">
-                    <img src="assets/images/profile.png" alt="Avatar" class="avatar">
-                    <div class="message-text">La UPC es la mejor universidad del mundo</div>
-                </div>
-                <div class="message">
-                    <img src="assets/images/profile.png" alt="Avatar" class="avatar">
-                    <div class="message-text">IHC se pasa solo</div>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" placeholder="Escribe un mensaje">
-                <button class="send-button">➤</button>
-            </div>
-        </div>
+<div class="container">
+    <div class="sidebar">
+      <div class="back-button">←</div>
+      <button class="forum-button">Foro UPC</button>
+      <button class="forum-button">Foro ULima</button>
+      <button class="forum-button">Foro UP</button>
+      <button class="forum-button">Foro Ingeniería</button>
+      <button class="forum-button">Foro Ciencias de la Salud</button>
+      <button class="forum-button">Foro Arquitectura</button>
     </div>
+  
+    <div class="chat-area">
+      <div class="chat-header">Foro UPC</div>
+      <div class="chat-messages">
+        <div *ngFor="let message of messages" class="message">
+          <img src="assets/images/profile.png" alt="Avatar" class="avatar">
+          <div class="message-text">{{ message.text }}</div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" [(ngModel)]="newMessage" placeholder="Escribe un mensaje">
+        <button class="send-button" (click)="sendMessage()">➤</button>
+      </div>
+    </div>
+  </div>
+  

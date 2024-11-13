@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './resultados-guardados.component.html',
   
 })
+
 export class ResultadosGuardadosComponent {
   constructor(private _router: Router) { }
 

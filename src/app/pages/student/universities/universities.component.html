@@ -1,0 +1,78 @@
+<div class="container">
+    <!-- Vista de la lista de universidades -->
+    <div *ngIf="!selectedUniversity">
+      <button class="back-button" (click)="deselectUniversity()">←</button>
+      <h1>Universidades</h1>
+      <p>Lista de universidades con las cuales tenemos convenios</p>
+  
+      <!-- Sección de filtro y búsqueda -->
+      <div class="filter-section">
+        <label for="campusFilter">Sede</label>
+        <select id="campusFilter" [(ngModel)]="selectedCampus" (change)="filterUniversities()">
+          <option value="Todos">Todos</option>
+          <option *ngFor="let campus of campuses" [value]="campus">{{ campus }}</option>
+        </select>
+  
+        <input type="text" placeholder="Buscar" [(ngModel)]="searchQuery" (input)="filterUniversities()" />
+      </div>
+  
+      <!-- Lista de universidades -->
+      <div class="universities-list">
+        <div *ngFor="let university of filteredUniversities" class="university-button" (click)="selectUniversity(university)">
+          {{ university.name }}
+        </div>
+      </div>
+    </div>
+  
+    <!-- Vista de información de la universidad seleccionada -->
+    <div *ngIf="selectedUniversity">
+      <!-- Cabecera -->
+      <header class="header">
+        <h1>Información de {{ selectedUniversity.name }}</h1>
+        <p>{{ selectedUniversity.details }}</p>
+      </header>
+  
+      <!-- Contenido principal -->
+      <div class="main-content">
+        <!-- Menú de navegación lateral -->
+        <aside class="sidebar">
+          <button class="nav-button">Descripción</button>
+          <button class="nav-button">Programas</button>
+          <button class="nav-button">Investigación</button>
+          <button class="nav-button">Admisión</button>
+          <button class="nav-button">Contacto</button>
+        </aside>
+  
+        <!-- Sección de información -->
+        <section class="info-section">
+          <!-- Descripción de la institución -->
+          <div class="info-card">
+            <h2>Descripción de la Institución</h2>
+            <p>{{ selectedUniversity.details }}</p>
+          </div>
+  
+          <!-- Aquí puedes agregar más detalles de la universidad -->
+          <div class="info-card">
+            <h2>Programas Ofrecidos</h2>
+            <p>Detalles sobre los programas ofrecidos...</p>
+          </div>
+  
+          <div class="info-card">
+            <h2>Investigación</h2>
+            <p>Detalles sobre la investigación...</p>
+          </div>
+  
+          <div class="info-card">
+            <h2>Proceso de Admisión</h2>
+            <p>Detalles sobre el proceso de admisión...</p>
+          </div>
+  
+          <div class="info-card">
+            <h2>Contacto</h2>
+            <p>Detalles de contacto...</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  

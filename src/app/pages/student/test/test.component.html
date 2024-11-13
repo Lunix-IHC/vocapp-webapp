@@ -2,7 +2,7 @@
     <main>
         <div class="top">
             <div class="back-arrow" >
-                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/student/inicio">
+                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/test">
             </div>
             <div class="title">
                 <h1>Test</h1>
@@ -11,8 +11,8 @@
         </div>
         <div class="content">
             <div class="left">
-                <button>Reanudar test</button>
-                <button>Realizar nuevo test</button>
+                <button (click)="navigateToTest()">Reanudar test</button>
+                <button (click)="navigateToTest()">Realizar nuevo test</button>
                 <button>Ver historial de resultados</button>
             </div>
             <div class="right">

@@ -1,11 +1,15 @@
 
 <div class="container">
-
-        <div class="header">
-            <h2>Test Vocacional</h2>
-            <p>Sección de test para el estudiante</p>
+    <main>
+        <div class="top">
+            <div class="back-arrow" >
+                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/test">
+            </div>
+            <div class="title">
+                <h1>Test Vocacional</h1>
+                <p>Sección de test para el estudiante</p>
+            </div>
         </div>
-
 
         @if(step==1){
             <div class="title">1/5 parte</div>
@@ -252,4 +256,5 @@
             <button class="button button-back" (click)="navigateToBack()">Regresar</button>
             <button class="button button-next" (click)="navigateToNext()">Continuar</button>
         </div>    
-    </div>
+    </main>
+</div> 

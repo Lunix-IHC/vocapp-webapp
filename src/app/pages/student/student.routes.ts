@@ -8,6 +8,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { ResultadosGuardadosComponent } from './test/resultados-guardados/resultados-guardados.component';
 import { ForoComponent } from './foro/foro.component';
 
+
 export const studentRoutes: Routes = [
     {
         path: '',
@@ -19,6 +20,7 @@ export const studentRoutes: Routes = [
             {path: 'appointment', component:AppointmentComponent},
             {path: 'resultados-guardados', component:ResultadosGuardadosComponent},
             {path: 'foro', component:ForoComponent},
+            {path: 'Sesion', component: AppointmentComponent}
         ]
     },
 

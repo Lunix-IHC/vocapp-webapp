@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
+import { User } from '../../../shared/models/user';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +15,7 @@ import { Router, RouterModule } from '@angular/router';
 export class SignInComponent implements OnInit {
   signInForm: FormGroup;
 
-  constructor(private _router: Router, private fb: FormBuilder) {}
+  constructor(private _router: Router, private fb: FormBuilder, private authService: AuthService) {}
   
   ngOnInit(): void {
     this.signInForm = this.fb.group({
@@ -36,12 +38,20 @@ export class SignInComponent implements OnInit {
 
   SignIn() {
     if (this.signInForm.valid) {
-      // Aquí puedes agregar tu lógica de autenticación
-      console.log('Form válido');
-      this._router.navigate(['home']);
+      const user: Partial<User> = { 
+        email: this.signInForm.value.email,
+        password: this.signInForm.value.password
+      };
+      const success = this.authService.login(user);
+      if (success) {
+        console.log('Form válido');
+        this._router.navigate(['home']);
+      } else {
+        alert("El usuario o contraseña son incorrectos");
+      }
     } else {
       console.log('Form no válido');
-      this.signInForm.markAllAsTouched();  // Muestra mensajes de error en campos
+      this.signInForm.markAllAsTouched();
     }
   }
 }

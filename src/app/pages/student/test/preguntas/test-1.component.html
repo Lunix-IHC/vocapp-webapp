@@ -1,8 +1,7 @@
-
 <div class="container">
     <main>
         <div class="top">
-            <div class="back-arrow" >
+            <div class="back-arrow">
                 <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/test">
             </div>
             <div class="title">
@@ -11,250 +10,124 @@
             </div>
         </div>
 
-        @if(step==1){
+        <!-- Paso 1 -->
+        <div *ngIf="step === 1">
             <div class="title">1/5 parte</div>
-            
-            <!-- Pregunta 1 -->
             <div class="question-container">
                 <div class="question">¿Qué tanto disfrutas realizar actividades creativas como dibujar, escribir o diseñar?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider1">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[1].q1" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 2 -->
             <div class="question-container">
                 <div class="question">¿Qué tanto disfrutas resolver problemas o acertijos complejos?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider2">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[1].q2" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 3 -->
             <div class="question-container">
                 <div class="question">¿Qué tanto disfrutas realizar actividades creativas como dibujar, escribir o diseñar?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider3">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[1].q3" class="slider">
                 </div>
             </div>
-        }
-        @else if(step==2){
+        </div>
+
+        <!-- Paso 2 -->
+        <div *ngIf="step === 2">
             <div class="title">2/5 parte</div>
-    
-            <!-- Pregunta 1 -->
             <div class="question-container">
                 <div class="question">¿Qué tan competente te consideras para resolver problemas matemáticos o lógicos?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider1">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[2].q1" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 2 -->
             <div class="question-container">
                 <div class="question">¿Qué tan bueno eres en comunicarte de manera efectiva con otras personas?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider2">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[2].q2" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 3 -->
             <div class="question-container">
                 <div class="question">¿Qué tan habilidoso te consideras en tareas manuales o prácticas?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider3">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[2].q3" class="slider">
                 </div>
             </div>
-        }
-        @else if(step==3){
+        </div>
+
+        <!-- Paso 3 -->
+        <div *ngIf="step === 3">
             <div class="title">3/5 parte</div>
-    
-            <!-- Pregunta 1 -->
             <div class="question-container">
-                <div class="question">Qué tan importante es para ti tener estabilidad laboral en tu futuro trabajo?</div>
+                <div class="question">¿Qué tan importante es para ti tener estabilidad laboral en tu futuro trabajo?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider1">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[3].q1" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 2 -->
             <div class="question-container">
-                <div class="question">Qué tan importante es que tu trabajo te permita ser creativo?</div>
+                <div class="question">¿Qué tan importante es que tu trabajo te permita ser creativo?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider2">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[3].q2" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 3 -->
             <div class="question-container">
                 <div class="question">¿Qué tanto valoras la posibilidad de tener un impacto positivo en la sociedad?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider3">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[3].q3" class="slider">
                 </div>
             </div>
-        }
-        @else if(step==4){
+        </div>
+
+        <!-- Paso 4 -->
+        <div *ngIf="step === 4">
             <div class="title">4/5 parte</div>
-            <!-- Pregunta 1 -->
             <div class="question-container">
                 <div class="question">¿Qué tan competente te consideras para resolver problemas matemáticos o lógicos?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider1">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[4].q1" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 2 -->
             <div class="question-container">
                 <div class="question">¿Qué tan bueno eres en comunicarte de manera efectiva con otras personas?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider2">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[4].q2" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 3 -->
             <div class="question-container">
                 <div class="question">¿Qué tan habilidoso te consideras en tareas manuales o prácticas?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider3">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[4].q3" class="slider">
                 </div>
             </div>
-        }
-        @else if(step==5){
+        </div>
+
+        <!-- Paso 5 -->
+        <div *ngIf="step === 5">
             <div class="title">5/5 parte</div>
-            <!-- Pregunta 1 -->
             <div class="question-container">
                 <div class="question">¿Te sientes más cómodo tomando decisiones importantes por ti mismo?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider1">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[5].q1" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 2 -->
             <div class="question-container">
                 <div class="question">¿Qué tan dispuesto estás a asumir riesgos en un ambiente laboral?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider2">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[5].q2" class="slider">
                 </div>
             </div>
-
-            <!-- Pregunta 3 -->
             <div class="question-container">
                 <div class="question">¿Qué tanto te gustan los trabajos que requieren atención a los detalles?</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" value="3" class="slider" id="slider3">
-                    <div class="slider-labels">
-                        <div class="slider-value" id="value1">1</div>
-                        <div class="slider-value" id="value1">2</div>
-                        <div class="slider-value" id="value1">3</div>
-                        <div class="slider-value" id="value1">4</div>
-                        <div class="slider-value" id="value1">5</div>
-                    </div>
+                    <input type="range" min="1" max="5" [(ngModel)]="answers[5].q3" class="slider">
                 </div>
             </div>
-        }
-
-        
+        </div>
 
         <div class="button-container">
             <button class="button button-back" (click)="navigateToBack()">Regresar</button>
             <button class="button button-next" (click)="navigateToNext()">Continuar</button>
-        </div>    
+        </div>
     </main>
-</div> 
+</div>

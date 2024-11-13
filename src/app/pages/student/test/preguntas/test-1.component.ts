@@ -6,16 +6,27 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './test-1.component.html',
-  styleUrl: './test-1.component.sass'
+  styleUrl: './test-1.component.css'
 })
 export class Test1Component {
-
+  step:number=1;
   constructor(private _router: Router) { }
 
+
   navigateToNext() {
-    this._router.navigate(['test-2'])
+    if(this.step>4){
+      this._router.navigate(['home/student/resultados-guardados']);
+    }
+    else{
+      this.step++;
+    }
   }
   navigateToBack() {
-    this._router.navigate(['acceso-test'])
+    if(this.step<2){
+      this._router.navigate(['home/student/test']);
+    }
+    else{
+      this.step--;
+    }
   }
 }

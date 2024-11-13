@@ -14,7 +14,7 @@ export class ResultadosGuardadosComponent {
   constructor(private _router: Router) { }
 
   navigateToAccesoTest() {
-    this._router.navigate(['acceso-test']);
+    this._router.navigate(['home/student/inicio']);
   }
   
 }

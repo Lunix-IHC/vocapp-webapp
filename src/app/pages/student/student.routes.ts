@@ -8,6 +8,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { ResultadosGuardadosComponent } from './test/resultados-guardados/resultados-guardados.component';
 import { ForoComponent } from './foro/foro.component';
 import { Test1Component } from './test/preguntas/test-1.component';
+import { ConfirmacionCitaComponent } from '../confirmacion-cita/confirmacion-cita.component';
 
 
 
@@ -24,7 +25,8 @@ export const studentRoutes: Routes = [
             {path: 'resultados-guardados', component:ResultadosGuardadosComponent},
             {path: 'foro', component:ForoComponent},
             {path: 'preguntas', component:Test1Component},
-            {path: 'Sesion', component: AppointmentComponent}
+            {path: 'Sesion', component: AppointmentComponent},
+            {path: 'Confirmacion', component: ConfirmacionCitaComponent}
         ]
     },
 

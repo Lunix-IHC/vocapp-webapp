@@ -1,0 +1,42 @@
+    <div class="container">
+        <div class="card">
+            <!-- Header -->
+       
+            <div class="top">
+                <div class="back-arrow">
+                    <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/appointment">
+                </div>
+                <div class="title">
+                    <h1>Francisco Emanuel Aguilar</h1>
+                    <p>Horarios disponibles:</p>
+                </div>
+            </div>
+
+            <!-- Time Selector -->
+            <div class="dropdown">
+                <select class="select-button" required>
+                    <option value="" disabled selected>Seleccione el horario</option>
+                    <option value="9:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                </select>
+            </div>
+
+            <!-- Reason Selector -->
+            <div class="dropdown">
+                <select class="select-button" required>
+                    <option value="" disabled selected>Seleccione el motivo de la cita</option>
+                    <option value="general">Consulta General</option>
+                    <option value="seguimiento">Seguimiento</option>
+                    <option value="primera">Primera Visita</option>
+                    <option value="emergencia">Emergencia</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="submit-button">Reservar cita</button>
+        </div>
+    </div>

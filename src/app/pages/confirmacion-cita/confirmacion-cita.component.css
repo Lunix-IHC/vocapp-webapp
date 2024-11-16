@@ -6,9 +6,23 @@
 
 .back-arrow {
     font-size: 24px;
-    color: #333;
+    color: #fff;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin: 10px;
+}  
+
+img {
+    max-width: 100%;
 }
+
+.back-arrow:hover {
+    background-color: #0000003f;
+}
+
 
 h1 {
     font-size: 24px;
@@ -30,7 +44,7 @@ p {
 }
 
 .container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +55,7 @@ p {
     
 }
 
-.card {
+.confirmation-card {
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -50,7 +64,8 @@ p {
     flex-direction: column;
     gap: 1.5rem;
     min-height: 200px;
-    min-width: 40vw;
+    width: 600px;
+    
 }
 
 /* Header styles */
@@ -88,12 +103,14 @@ p {
 
 /* Dropdown styles */
 .dropdown {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
 }
 
 .select-button {
-    width: 100%;
+    width: 70%;
     padding: 1rem;
     border: 1px solid #E5E7EB;
     border-radius: 0.75rem;
@@ -124,7 +141,8 @@ p {
 
 /* Submit button */
 .submit-button {
-    width: 100%;
+    width: 50%;
+    margin-left: 25%;
     padding: 0.75rem 1rem;
     background-color: #06B6D4;
     color: white;

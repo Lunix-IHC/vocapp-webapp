@@ -11,7 +11,7 @@
         </div>
         <h2>Elige el resultado (en caso hayas realizado al menos un test)</h2>
         <div class="right">
-            <button *ngFor="let number of range(1, resultados); let i = index" (click)="navigateToResults(i)">Resultado numero {{i+1}}</button>
+            <button *ngFor="let test of tests; let i = index" (click)="navigateToResults(test.id)">Resultado numero {{i+1}}</button>
         </div>
 
     </main>

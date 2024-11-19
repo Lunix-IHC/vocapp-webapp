@@ -26,7 +26,7 @@ export const studentRoutes: Routes = [
             {path: 'appointment', component:AppointmentComponent},
             {path: 'resultados-guardados', component:ResultadosGuardadosComponent},
             {path: 'foro', component:ForoComponent},
-            {path: 'preguntas', component:Test1Component},
+            {path: 'preguntas/:id', component:Test1Component},
             {path: 'Sesion', component: AppointmentComponent},
             {path: 'Confirmacion', component: ConfirmacionCitaComponent},
             {path: 'results',component:ResultsComponent},

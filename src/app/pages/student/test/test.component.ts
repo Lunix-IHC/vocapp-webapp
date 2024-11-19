@@ -15,16 +15,17 @@ export class TestComponent {
     this._router.navigate(['/home/student/foro'])
   }
 
-  navigateToNewTest(){
-    this.testService.setStep(1);
-    this.testService.setAnswers([0]);
-    
-    this._router.navigate(['/home/student/preguntas'])
+  navigateToNewTest() {
+    this.testService.initNewTest();
+    console.log("asasas")
+    this._router.navigate([`/home/student/preguntas/${this.testService.getCurrentTestId()}`])
   }
+
   navigateToTest(){
-    this._router.navigate(['/home/student/preguntas'])
+    // this._router.navigate(['/home/student/preguntas'])
   }
-  navigateToResults(){
+
+  navigateToResults() {
     this._router.navigate(['/home/student/results'])
   }
 

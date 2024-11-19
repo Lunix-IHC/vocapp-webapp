@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-interface Answer {
-  q1: number;
-  q2: number;
-  q3: number;
-}
+import { Test, TestItem } from '../models/test.model';
+import { getUniqueId } from '../utils/funtions';
+import { questions_catalogue } from '../utils/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
   private currentStep = new BehaviorSubject<number>(1);
-  private answers: number[] = Array(30).fill(1);
+  private currentTestId: string;
+  private currentTest = new BehaviorSubject<TestItem[]>([]);
+  private tests: Test[] =  [];
 
-  constructor() {}
+  constructor() { }
+
+  initNewTest() {
+    this.currentStep = new BehaviorSubject<number>(1);
+    this.currentTestId = getUniqueId();
+    const test: TestItem[] = this.currentTest.value;
+    for(let question of questions_catalogue) {
+      test.push({
+        question: question,
+        answer: 3
+      })
+    }
+    this.currentTest = new BehaviorSubject<TestItem[]>(test);
+  }
 
   getStep() {
     return this.currentStep.asObservable();
@@ -24,15 +36,26 @@ export class TestService {
     this.currentStep.next(step);
   }
 
-  getAnswers() {
-    return this.answers;
+  getCurrentTest() {
+    return this.currentTest.asObservable();
   }
 
-  setAnswers(newAnswers: number[]): void {
-    if (newAnswers.length!=30){
-      this.answers = Array(30).fill(1);
-    }else{
-    this.answers = [...newAnswers];
-    }
+  getCurrentTestId() {
+    return this.currentTestId;
+  }
+
+  getTests() {
+    return this.tests;
+  }
+
+  getTestById(id: string) {
+    return this.tests.find(x => x.id == id);
+  }
+
+  setTest(id: string, answers: TestItem[]): void {
+    this.tests.push({
+      id,
+      answers
+    })
   }
 }

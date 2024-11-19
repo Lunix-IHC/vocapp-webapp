@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar-student',
@@ -10,4 +11,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavbarStudentComponent {
 
+  constructor(private authService: AuthService) { }
+
+  cerrarSesion() {
+    this.authService.logout();
+  }
 }

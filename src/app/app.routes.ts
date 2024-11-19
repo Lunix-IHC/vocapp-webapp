@@ -1,16 +1,19 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { AlreadyLoggedInGuard } from './shared/guards/already-loggedin.guard';
 
 export const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('./pages/main/main.routes').then(x => x.MainRoutes)
+        loadChildren: () => import('./pages/main/main.routes').then(x => x.MainRoutes),
+        canActivate: [AlreadyLoggedInGuard]
     },
     {
         path: 'auth',
-        loadChildren: () => import('./pages/auth/auth.routes').then(x => x.AuthRoutes)
+        loadChildren: () => import('./pages/auth/auth.routes').then(x => x.AuthRoutes),
+        canActivate: [AlreadyLoggedInGuard]
     },
     {
         path: 'home',
@@ -24,8 +27,6 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: '',
+        redirectTo: 'auth/sign-in',
     }
 ];
-
-// para rutas protegidas agregar canActivate: [AuthGuard]

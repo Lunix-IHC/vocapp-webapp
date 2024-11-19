@@ -21,8 +21,8 @@ export class TestComponent {
     this._router.navigate([`/home/student/preguntas/${this.testService.getCurrentTestId()}`])
   }
 
-  navigateToTest(){
-    // this._router.navigate(['/home/student/preguntas'])
+  navigateToTest() {
+    this._router.navigate([`/home/student/preguntas/${this.testService.getCurrentTestId()}`])
   }
 
   navigateToResults() {

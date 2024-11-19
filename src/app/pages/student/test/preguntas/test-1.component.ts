@@ -52,6 +52,7 @@ export class Test1Component implements OnInit {
       this.testService.setStep(this.step + 1);
     } else {
       this.testService.setTest(this.testId, this.test);
+      this.testService.initNewTest();
       this._router.navigate(['home/student/show-results/'+ this.testId]);
     }
   }

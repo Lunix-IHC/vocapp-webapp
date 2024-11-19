@@ -1,0 +1,18 @@
+<div class="container">
+    <main>
+        <div class="top">
+            <div class="back-arrow" >
+                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/inicio">
+            </div>
+            <div class="title">
+                <h1>Resultados</h1>
+                <p>Resiva los resultados de tus tests pasados</p>
+            </div>
+        </div>
+        <h2>Elige el resultado (en caso hayas realizado al menos un test)</h2>
+        <div class="right">
+            <button *ngFor="let number of range(1, resultados); let i = index" (click)="navigateToResults(i)">Resultado numero {{i+1}}</button>
+        </div>
+
+    </main>
+</div>

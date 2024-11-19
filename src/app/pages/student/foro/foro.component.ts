@@ -3,11 +3,12 @@ import { ChatService } from '../../../shared/services/chat.service';
 import { Message } from '../../../shared/models/message';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,RouterLink],
   templateUrl: './foro.component.html',
   styleUrls: ['./foro.component.css']
 })

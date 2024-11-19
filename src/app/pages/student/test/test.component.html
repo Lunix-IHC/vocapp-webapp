@@ -2,7 +2,7 @@
     <main>
         <div class="top">
             <div class="back-arrow" >
-                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/test">
+                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/inicio">
             </div>
             <div class="title">
                 <h1>Test</h1>
@@ -12,15 +12,15 @@
         <div class="content">
             <div class="left">
                 <button (click)="navigateToTest()">Reanudar test</button>
-                <button (click)="navigateToTest()">Realizar nuevo test</button>
-                <button>Ver historial de resultados</button>
+                <button (click)="navigateToNewTest()">Realizar nuevo test</button>
+                <button (click)="navigateToResults()">Ver historial de resultados</button>
             </div>
             <div class="right">
                 <h2>Foros para estudiar</h2>
-                <button>Acerca de Arquitectura</button>
-                <button>Acerca de Ingeniería</button>
-                <button>Acerca de Medicina</button>
-                <button>Acerca de Psicología</button>
+                <button (click)="navigateToForo()">Acerca de Arquitectura</button>
+                <button (click)="navigateToForo()">Acerca de Ingeniería</button>
+                <button (click)="navigateToForo()">Acerca de Medicina</button>
+                <button (click)="navigateToForo()">Acerca de Psicología</button>
             </div>
         </div>
     </main>

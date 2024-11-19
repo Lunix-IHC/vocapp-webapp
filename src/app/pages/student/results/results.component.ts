@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
+import { TestService } from '../../../shared/services/test.service';
+import { Test } from '../../../shared/models/test.model';
 
 @Component({
   selector: 'app-results',
@@ -9,16 +11,16 @@ import { RouterLink, Router } from '@angular/router';
   templateUrl: './results.component.html',
   styleUrl: './results.component.css'
 })
-export class ResultsComponent {
-  constructor(private _router: Router) { }
+export class ResultsComponent implements OnInit {
+  tests: Test[] = [];
 
-  //para el ngfor
-  resultados: number = localStorage.length;
-  range(start: number, end: number): number[] {
-    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  constructor(private _router: Router, private testService: TestService) { }
+
+  ngOnInit() {
+    this.tests = this.testService.getTests()
   }
 
-  navigateToResults(id:number){
-    this._router.navigate(['/home/student/show-results/'+id])
+  navigateToResults(id: string){
+    this._router.navigate(['/home/student/show-results/' + id])
   }
 }

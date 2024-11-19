@@ -10,113 +10,36 @@
             </div>
         </div>
 
-        <!-- Paso 1 -->
         <div class="title">{{step}}/6 parte</div>
 
-        <div *ngIf="step === 1">
-            
-            <div *ngFor="let number of range(1, 5); let i = index" class="question-container">
-                <div class="question">{{questions[5*(step-1)+i]}}</div>
+        <div *ngFor="let group of groupedQuestions; let groupIndex = index" class="group-container">
+            <div *ngIf="step === groupIndex + 1">
+              <div *ngFor="let item of group; let i = index" class="question-container">
+                <div class="question">{{ item.question }}</div>
                 <div class="slider-container">
-                    <input type="range" min="1" max="5" [(ngModel)]="answers[5*(step-1)+i]"  [name]="'question' + i"  (input)="onRangeChange($event, i)" class="slider">
-                    <div class="slider-labels">
-                        <div class="slider-value">1</div>
-                        <div class="slider-value">2</div>
-                        <div class="slider-value">3</div>
-                        <div class="slider-value">4</div>
-                        <div class="slider-value">5</div>
-                    </div>
+                  <input 
+                    type="range" 
+                    min="1" 
+                    max="5" 
+                    [value]="item.answer" 
+                    (change)="updateAnswer(i, groupIndex, $event)" 
+                    [name]="'question' + groupIndex + '_' + i" 
+                    class="slider"
+                  />
+                  <div class="slider-labels">
+                    <div class="slider-value">1</div>
+                    <div class="slider-value">2</div>
+                    <div class="slider-value">3</div>
+                    <div class="slider-value">4</div>
+                    <div class="slider-value">5</div>
+                  </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Paso 2 -->
-        <div *ngIf="step === 2">
-            <div *ngFor="let number of range(1, 5); let i = index" class="question-container">
-                <div class="question">{{questions[5*(step-1)+i]}}</div>
-                <div class="slider-container">
-                    <input type="range" min="1" max="5" [(ngModel)]="answers[5*(step-1)+i]" [name]="'question' + i" class="slider">
-                    <div class="slider-labels">
-                        <div class="slider-value">1</div>
-                        <div class="slider-value">2</div>
-                        <div class="slider-value">3</div>
-                        <div class="slider-value">4</div>
-                        <div class="slider-value">5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paso 3 -->
-        <div *ngIf="step === 3">
-            <div *ngFor="let number of range(1, 5); let i = index" class="question-container">
-                <div class="question">{{questions[5*(step-1)+i]}}</div>
-                <div class="slider-container">
-                    <input type="range" min="1" max="5" [(ngModel)]="answers[5*(step-1)+i]" [name]="'question' + i" class="slider">
-                    <div class="slider-labels">
-                        <div class="slider-value">1</div>
-                        <div class="slider-value">2</div>
-                        <div class="slider-value">3</div>
-                        <div class="slider-value">4</div>
-                        <div class="slider-value">5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paso 4 -->
-        <div *ngIf="step === 4">
-            <div *ngFor="let number of range(1, 5); let i = index" class="question-container">
-                <div class="question">{{questions[5*(step-1)+i]}}</div>
-                <div class="slider-container">
-                    <input type="range" min="1" max="5" [(ngModel)]="answers[5*(step-1)+i]" [name]="'question' + i" class="slider">
-                    <div class="slider-labels">
-                        <div class="slider-value">1</div>
-                        <div class="slider-value">2</div>
-                        <div class="slider-value">3</div>
-                        <div class="slider-value">4</div>
-                        <div class="slider-value">5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paso 5 -->
-        <div *ngIf="step === 5">
-            <div *ngFor="let number of range(1, 5); let i = index" class="question-container">
-                <div class="question">{{questions[5*(step-1)+i]}}</div>
-                <div class="slider-container">
-                    <input type="range" min="1" max="5" [(ngModel)]="answers[5*(step-1)+i]" [name]="'question' + i" class="slider">
-                    <div class="slider-labels">
-                        <div class="slider-value">1</div>
-                        <div class="slider-value">2</div>
-                        <div class="slider-value">3</div>
-                        <div class="slider-value">4</div>
-                        <div class="slider-value">5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paso 6 -->
-        <div *ngIf="step === 6">
-            <div *ngFor="let number of range(1, 5); let i = index" class="question-container">
-                <div class="question">{{questions[5*(step-1)+i]}}</div>
-                <div class="slider-container">
-                    <input type="range" min="1" max="5" [(ngModel)]="answers[5*(step-1)+i]" [name]="'question' + i" class="slider">
-                    <div class="slider-labels">
-                        <div class="slider-value">1</div>
-                        <div class="slider-value">2</div>
-                        <div class="slider-value">3</div>
-                        <div class="slider-value">4</div>
-                        <div class="slider-value">5</div>
-                    </div>
-                </div>
+              </div>
             </div>
         </div>
 
         <div class="button-container">
-            <button class="button button-back" (click)="navigateToBack()">Regresar</button>
+            <button class="button button-back" (click)="navigateToBack()" [disabled]="step === 1">Regresar</button>
             <button class="button button-next" (click)="navigateToNext()">Continuar</button>
         </div>
     </main>

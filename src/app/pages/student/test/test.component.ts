@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { TestService } from '../../../shared/services/test.service';
 
 @Component({
   selector: 'app-test',
@@ -9,9 +10,23 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './test.component.css'
 })
 export class TestComponent {
-  constructor(private _router: Router) { }
-  navigateToTest(){
-    this._router.navigate(['/home/student/preguntas'])
+  constructor(private _router: Router, private testService: TestService) { }
+  navigateToForo(){
+    this._router.navigate(['/home/student/foro'])
+  }
+
+  navigateToNewTest() {
+    this.testService.initNewTest();
+    console.log("asasas")
+    this._router.navigate([`/home/student/preguntas/${this.testService.getCurrentTestId()}`])
+  }
+
+  navigateToTest() {
+    this._router.navigate([`/home/student/preguntas/${this.testService.getCurrentTestId()}`])
+  }
+
+  navigateToResults() {
+    this._router.navigate(['/home/student/results'])
   }
 
 }

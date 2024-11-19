@@ -1,6 +1,7 @@
 <div class="container">
+  <div class="foro-container">
     <div class="sidebar">
-      <div class="back-button">←</div>
+      <div class="back-arrow"><img src="assets/images/flecha-izquierda.png" routerLink="/home/student/community"></div>
       <button class="forum-button">Foro UPC</button>
       <button class="forum-button">Foro ULima</button>
       <button class="forum-button">Foro UP</button>
@@ -8,9 +9,9 @@
       <button class="forum-button">Foro Ciencias de la Salud</button>
       <button class="forum-button">Foro Arquitectura</button>
     </div>
-  
+
     <div class="chat-area">
-      <div class="chat-header">Foro UPC</div>
+      <div class="chat-header">Foro General</div>
       <div class="chat-messages">
         <div *ngFor="let message of messages" class="message">
           <img src="assets/images/profile.png" alt="Avatar" class="avatar">
@@ -23,4 +24,5 @@
       </div>
     </div>
   </div>
+</div>
   

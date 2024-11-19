@@ -8,6 +8,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { ResultadosGuardadosComponent } from './test/resultados-guardados/resultados-guardados.component';
 import { ForoComponent } from './foro/foro.component';
 import { Test1Component } from './test/preguntas/test-1.component';
+import { ConfirmacionCitaComponent } from '../confirmacion-cita/confirmacion-cita.component';
+import { ShowResultsComponent } from './show-results/show-results.component';
+import { ResultsComponent } from './results/results.component';
 
 
 
@@ -23,8 +26,11 @@ export const studentRoutes: Routes = [
             {path: 'appointment', component:AppointmentComponent},
             {path: 'resultados-guardados', component:ResultadosGuardadosComponent},
             {path: 'foro', component:ForoComponent},
-            {path: 'preguntas', component:Test1Component},
-            {path: 'Sesion', component: AppointmentComponent}
+            {path: 'preguntas/:id', component:Test1Component},
+            {path: 'Sesion', component: AppointmentComponent},
+            {path: 'Confirmacion', component: ConfirmacionCitaComponent},
+            {path: 'results',component:ResultsComponent},
+            {path: 'show-results/:result', component: ShowResultsComponent}
         ]
     },
 

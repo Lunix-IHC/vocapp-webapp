@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TestService } from '../../../../shared/services/test.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Answer } from '../../../../shared/models/answer';
+import { TestItem } from '../../../../shared/models/test.model';
 
 @Component({
   selector: 'app-test-1',
@@ -12,27 +12,48 @@ import { Answer } from '../../../../shared/models/answer';
   templateUrl: './test-1.component.html',
   styleUrls: ['./test-1.component.css']
 })
+
 export class Test1Component implements OnInit {
   step: number = 1;
-  answers: Array<{ q1: number; q2: number; q3: number }> = [];
+  test: TestItem[] = [];
+  testId: string;
+  
+  constructor(private _router: Router, private testService: TestService, private activatedRoute: ActivatedRoute) {
 
-  constructor(private _router: Router, private testService: TestService) {}
+  }
 
   ngOnInit() {
     this.testService.getStep().subscribe((step) => {
       this.step = step;
     });
-    this.testService.getAnswers().subscribe((answers) => {
-      this.answers = answers;
+    this.testService.getCurrentTest().subscribe((currentTest) => {
+      this.test = currentTest;
     });
+    this.activatedRoute.params.subscribe(params => this.testId = params['id']);
   }
 
+  get groupedQuestions(): TestItem[][] {
+    const groupSize = 5;
+    const groups: TestItem[][] = [];
+    for (let i = 0; i < this.test.length; i += groupSize) {
+      groups.push(this.test.slice(i, i + groupSize));
+    }
+    return groups;
+  }
+
+  updateAnswer(index: number, groupIndex: number, event: Event): void {
+    const newValue = +(event.target as HTMLInputElement).value;
+    this.groupedQuestions[groupIndex][index].answer = newValue;
+  }
+  
   navigateToNext() {
     console.log(this.step);
-    if (this.step < 5) {
+    if (this.step < 6) {
       this.testService.setStep(this.step + 1);
     } else {
-      this._router.navigate(['home/student/resultados-guardados']);
+      this.testService.setTest(this.testId, this.test);
+      this.testService.initNewTest();
+      this._router.navigate(['home/student/show-results/'+ this.testId]);
     }
   }
 
@@ -42,9 +63,5 @@ export class Test1Component implements OnInit {
     } else {
       this._router.navigate(['home/student/test']);
     }
-  }
-
-  onSliderChange(question: keyof Answer, value: number) {
-    this.testService.setAnswer(this.step - 1, question, value);
   }
 }

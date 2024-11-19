@@ -45,7 +45,7 @@ export class SignInComponent implements OnInit {
       const success = this.authService.login(user);
       if (success) {
         console.log('Form válido');
-        this._router.navigate(['home']);
+        this._router.navigate(['/home/student/inicio']);
       } else {
         alert("El usuario o contraseña son incorrectos");
       }

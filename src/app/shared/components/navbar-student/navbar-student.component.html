@@ -3,7 +3,7 @@
         <img src="assets/images/Logo.png" alt="logo" class="logo-image">
         <nav class="navbar">
             <ul>
-                <li><a routerLink="/home/student/inicio" routerlinkActive="active">Inicio</a></li>
+                <li><a routerLink="/home/student/inicio" routerLinkActive="active">Inicio</a></li>
                 <li><a routerLink="/home/student/test" routerLinkActive="active">Tests</a></li>
                 <li><a routerLink="/home/student/universities" routerLinkActive="active">Universidades</a></li>
                 <li><a routerLink="/home/student/community" routerLinkActive="active">Comunidad</a></li>
@@ -16,9 +16,7 @@
                 <img src="assets/images/menu-icon.png" alt="menu-icon" class="menu-icon">
             </label>
             <div class="menu-content">
-                <a href="#">Perfil</a>
-                <a href="#">Configuración</a>
-                <a href="#">Cerrar sesión</a>
+                <a href="#" (click)="cerrarSesion()">Cerrar sesión</a>
             </div>
         </div>
     </header>

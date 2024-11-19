@@ -54,27 +54,58 @@
 </div>
 
 <div class="universities">
-  <h3>Lista de Universidades</h3>
+  <h3 class="universities-title">Lista de Universidades</h3>
+
   <!-- Mostrar mensaje si no hay resultados -->
   <div *ngIf="filteredUniversities.length === 0" class="no-results">
     No se encontraron universidades con los filtros aplicados.
   </div>
+
   <!-- Lista de universidades -->
-  <ul>
-    <li *ngFor="let university of filteredUniversities">
-      <h4>{{ university.name }}</h4>
-      <p><strong>Ubicación:</strong> {{ university.location.department }}, {{ university.location.province }}, {{ university.location.district }}</p>
-      <p><strong>Tipo:</strong> {{ university.type }}</p>
-      <!--p><strong>Carreras:</strong> 
-        <span *ngFor="let faculty of university.faculties">
-          <strong>{{ faculty.name }}:</strong> {{ faculty.careers.join(', ') }}
-        </span>
-      </-->
-      <span *ngFor="let faculty of university.faculties">
-        <strong>{{ faculty.name }}, </strong> 
-      </span>
-      <p>{{ university.details }}</p>
-      <button (click)="showDetails(university)">Detalles</button>
-    </li>
-  </ul>
+  <div *ngFor="let university of filteredUniversities">
+    <ul>
+      <li class="university-item">
+        <h3>{{ university.name }}</h3>
+        <div class="center-btn">
+          <button class="details-btn" (click)="showDetails(university)">Ver Detalles</button>
+        </div>
+
+        <!-- Mostrar detalles si la universidad está seleccionada -->
+        <div *ngIf="selectedUniversity === university" class="university-details">
+          <p><strong>Detalles:</strong> {{ university.details }}</p>
+          <p><strong>Ubicación:</strong> {{ university.location.department }}, {{ university.location.province }}, {{ university.location.district }}</p>
+          <p><strong>Tipo de gestión:</strong> {{ university.type }}</p>
+          
+          <h4>Facultades y Carreras:</h4>
+          <div class="faculties">
+            <div *ngFor="let faculty of university.faculties" class="faculty-card">
+              <strong>{{ faculty.name }}</strong>
+              <div class="careers">
+                <button *ngFor="let career of faculty.careers" class="career-card">
+                  {{ career }}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agregar más detalles según lo requerido -->
+          <h4>Oferta Académica</h4>
+          <p>{{ university.academicOffer || 'No disponible' }}</p>
+          
+          <h4>Costos</h4>
+          <p>{{ university.costs || 'No disponible' }}</p>
+
+          <h4>Ubicación y Modalidad</h4>
+          <p>{{ university.modality || 'No disponible' }}</p>
+
+          <h4>Prestigio y Acreditación</h4>
+          <p>{{ university.prestige || 'No disponible' }}</p>
+
+          <div class="center-btn">
+            <button class="close-btn" (click)="closeDetails()">Cerrar</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -12,9 +12,6 @@ import { ConfirmacionCitaComponent } from '../confirmacion-cita/confirmacion-cit
 import { ShowResultsComponent } from './show-results/show-results.component';
 import { ResultsComponent } from './results/results.component';
 
-
-
-
 export const studentRoutes: Routes = [
     {
         path: '',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UniversitiesService } from '../../../shared/services/universities';
+import { UniversitiesService } from '../../../shared/services/universities.service';
 import { University } from '../../../shared/models/universities';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class UniversitiesComponent implements OnInit {
   universities: University[] = [];
   filteredUniversities: University[] = [];
+  selectedUniversity: University | null = null; // Para almacenar la universidad seleccionada
 
   departments: string[] = [];
   provinces: string[] = [];
@@ -42,14 +43,16 @@ export class UniversitiesComponent implements OnInit {
       this.departments = Array.from(new Set(data.map((u) => u.location.department)));
       this.provinces = Array.from(new Set(data.map((u) => u.location.province)));
       this.districts = Array.from(new Set(data.map((u) => u.location.district)));
-      this.careers = Array.from(new Set(data.flatMap((u) => u.faculties.flatMap(faculty => faculty.careers))));
-      this.faculties = Array.from(new Set(data.flatMap((u) => u.faculties.map(faculty => faculty.name))));
+      this.careers = Array.from(new Set(data.flatMap((u) => u.faculties.flatMap(faculty => faculty.careers)))); // Filtrar carreras
+      this.faculties = Array.from(new Set(data.flatMap((u) => u.faculties.map(faculty => faculty.name)))); // Filtrar facultades
     });
   }
 
+  // Método para aplicar los filtros
   applyFilters(event: Event): void {
     event.preventDefault();
 
+    // Filtrar universidades con base en los criterios seleccionados
     this.filteredUniversities = this.universities.filter((university) => {
       const matchesSearchTerm = university.name.toLowerCase().includes(this.searchTerm.toLowerCase());
       const matchesDepartment = this.selectedFilters.department === 'Todos' || university.location.department === this.selectedFilters.department;
@@ -63,6 +66,7 @@ export class UniversitiesComponent implements OnInit {
     });
   }
 
+  // Método para limpiar los filtros
   clearFilters(): void {
     this.searchTerm = '';
     this.selectedFilters = {
@@ -76,7 +80,13 @@ export class UniversitiesComponent implements OnInit {
     this.filteredUniversities = this.universities;
   }
 
+  // Mostrar detalles de una universidad seleccionada
   showDetails(university: University): void {
-    alert(`Detalles de la universidad:\n${JSON.stringify(university, null, 2)}`);
+    this.selectedUniversity = university;
+  }
+
+  // Cerrar los detalles de la universidad
+  closeDetails(): void {
+    this.selectedUniversity = null;
   }
 }

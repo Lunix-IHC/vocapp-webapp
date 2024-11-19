@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f7fa; /* Color de fondo suave */
+  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
   color: #333;
@@ -12,15 +12,14 @@ body {
   margin: 30px auto;
   padding: 25px;
   max-width: 900px;
-  border: 1px solid #ddd;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .filters h3 {
   margin-bottom: 20px;
-  color: #1e88e5; /* Azul vibrante */
+  color: #1e88e5;
   font-size: 2rem;
   text-align: center;
   border-bottom: 4px solid #1e88e5;
@@ -34,8 +33,7 @@ body {
   color: #555;
 }
 
-.filters select,
-.filters input {
+.filters input, .filters select {
   margin-bottom: 20px;
   padding: 12px;
   width: 100%;
@@ -46,14 +44,12 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.filters select:focus,
-.filters input:focus {
+.filters input:focus, .filters select:focus {
   border-color: #1e88e5;
   box-shadow: 0 0 10px rgba(30, 136, 229, 0.3);
   outline: none;
 }
 
-/* Estilo para los botones */
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -88,106 +84,185 @@ body {
 .universities {
   margin: 40px auto;
   max-width: 900px;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
+} 
 
-.universities h3 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #1e88e5;
+.universities-title {
   text-align: center;
+  font-size: 2.5rem;
+  color: #1e88e5;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   border-bottom: 4px solid #1e88e5;
   padding-bottom: 10px;
 }
 
-.universities ul {
-  list-style: none;
-  padding: 0;
+/* Detalles de universidad */
+.university-details {
+  margin-top: 20px;
 }
 
+.university-details h4 {
+  font-size: 1.6rem;
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+.university-details p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.faculties {
+  margin-top: 15px;
+}
+
+.faculty-card {
+  margin-bottom: 15px;
+}
+
+.career-card {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.career-card:hover {
+  background-color: #1565c0;
+  transform: translateY(-3px);
+}
+
+.career-card:active {
+  background-color: #0d47a1;
+  transform: translateY(1px);
+}
+
+/* Botones centrados */
+.center-btn {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+/*BOTON DE DETALLES*/
+.details-btn {
+  background-color: #2282ff;  /* Azul vibrante */
+  color: white;
+  font-size: 1rem;  /* Ajustado a un tamaño más equilibrado */
+  padding: 8px 16px;  /* Reduce el tamaño de padding para hacerlo más sutil */
+  border: none;
+  border-radius: 25px;  /* Bordes más redondeados para un look más moderno */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra sutil para profundidad */
+}
+
+.details-btn:hover {
+  background-color: #1976d2;  /* Azul más oscuro para hover */
+  transform: translateY(-2px);  /* Eleva ligeramente el botón en hover */
+}
+
+.details-btn:active {
+  background-color: #1565c0;  /* Aún más oscuro al hacer click */
+  transform: translateY(1px);  /* Movimiento sutil cuando se hace clic */
+}
+/* Botón "Cerrar" */
+.close-btn {
+  background-color: #ff5722;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #e64a19;
+}
+
+.close-btn:active {
+  background-color: #d32f2f;
+}
+
+/* Recuerdos para cada universidad */
+.university-item {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);  /* Sombra para resaltar el recuadro */
+  border: 1px solid #e0e0e0;  /* Borde suave */
+}
+
+/* Si quieres resaltar la universidad seleccionada */
+.university-item.selected {
+  border: 2px solid #1e88e5; /* Borde azul para selección */
+  box-shadow: 0 6px 15px rgba(30, 136, 229, 0.3); /* Sombra más fuerte al estar seleccionada */
+}
+
+/* Para el encabezado de cada universidad */
+.university-item h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilo para los botones de "Ver Detalles" */
+.details-btn {
+  background-color: #1e88e5;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: #1565c0;
+}
+
+.details-btn:active {
+  background-color: #0d47a1;
+}
+
+/* Espaciado entre el título y los recuadros */
+.universities h3 {
+  margin-bottom: 30px;  /* Aumenta el margen inferior para separar el título de los recuadros */
+}
+
+/* Espaciado entre las universidades en la lista */
 .universities li {
   padding: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;  /* Aumenta el espacio entre los recuadros */
   border-radius: 10px;
   background-color: #fafafa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
 }
 
-.universities li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
+/* Ajustes para la vista comprimida */
+@media (max-width: 768px) {
+  /* Aumenta el margen inferior cuando la pantalla sea pequeña */
+  .universities h3 {
+    margin-bottom: 20px;
+  }
 
-.universities h4 {
-  font-size: 1.6rem;
-  color: #1e88e5;
-  margin-bottom: 10px;
-}
-
-.universities p {
-  margin: 10px 0;
-  color: #666;
-  font-size: 1.1rem;
-}
-
-.universities .faculties {
-  font-size: 1rem;
-  color: #444;
-}
-
-.universities .faculties strong {
-  color: #1e88e5;
-}
-
-.universities .details-btn {
-  margin-top: 15px;
-  padding: 12px;
-  font-size: 1.1rem;
-  background-color: #1e88e5;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.universities .details-btn:hover {
-  background-color: #1565c0;
-  transform: translateY(-2px);
-}
-
-.universities .details-btn:active {
-  background-color: #0d47a1;
-  transform: translateY(0);
-}
-
-.universities .no-results {
-  color: #bb5454;
-  font-weight: bold;
-  text-align: center;
-  
-  font-size: 1.4rem;
-}
-
-/* Estilo para la caja de búsqueda con filtro */
-.filters input,
-.filters select {
-  font-size: 1rem;
-  padding: 12px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-.filters input:focus,
-.filters select:focus {
-  outline: none;
-  border: 1px solid #1e88e5;
-  box-shadow: 0 0 8px rgba(30, 136, 229, 0.3);
+  .universities li {
+    margin-bottom: 25px;  /* Aumenta el espacio entre los recuadros en pantallas pequeñas */
+  }
 }

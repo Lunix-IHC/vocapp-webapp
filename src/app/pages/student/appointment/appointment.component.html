@@ -2,7 +2,7 @@
 <div class="container">
     <div class="top">
         <div class="back-arrow">
-            <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/inicio">
+            <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/appointment">
         </div>
         <div class="title">
             <h1>Citas</h1>
@@ -12,27 +12,27 @@
 
     <div class="search-container">
         <span class="search-icon">🔍</span>
-        <!--<input type="text" placeholder="Buscar asesores" (input)="searchQuery = $event.target.value; onSearch()">-->
+        <input type="text" placeholder="Buscar asesores">
     </div>
 
     <div class="advisors-list" >
-        <div class="advisor-card" routerLink="/home/student/Confirmacion">
+        <div class="advisor-card" (click) = "navigateToConfirmarCita()">
             <span>Francisco Emanuel Aguilar</span>
             <button class="mail-button">✉</button>
         </div>
-        <div class="advisor-card" routerLink="/home/student/Confirmacion">
+        <div class="advisor-card" (click) = "navigateToConfirmarCita()">
             <span>Luis Martin Sanchez Canaval</span>
             <button class="mail-button">✉</button>
         </div>
-        <div class="advisor-card" routerLink="/home/student/Confirmacion">
+        <div class="advisor-card" (click) = "navigateToConfirmarCita()">
             <span>Elizabeth Del Pilar Saenz Musayon</span>
             <button class="mail-button">✉</button>
         </div>
-        <div class="advisor-card" routerLink="/home/student/Confirmacion">
+        <div class="advisor-card" (click) = "navigateToConfirmarCita()">
             <span>Henry Antonio Mendoza Puerta</span>
             <button class="mail-button">✉</button>
         </div>
-        <div class="advisor-card" routerLink="/home/student/Confirmacion">
+        <div class="advisor-card" (click) = "navigateToConfirmarCita()">
             <span>Jonathan Abrahan Sueros Zarate</span>
             <button class="mail-button">✉</button>
         </div>

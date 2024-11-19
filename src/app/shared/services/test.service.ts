@@ -52,6 +52,10 @@ export class TestService {
     return this.tests.find(x => x.id == id);
   }
 
+  getTestIndexById(id: string) {
+    return this.tests.findIndex(x => x.id == id);
+  }
+
   setTest(id: string, answers: TestItem[]): void {
     this.tests.push({
       id,

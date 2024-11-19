@@ -10,9 +10,8 @@ import { TestService } from '../../../shared/services/test.service';
   styleUrl: './show-results.component.css'
 })
 export class ShowResultsComponent {
-
-
   resultid: string;
+  index: number;
   sumCienciasMatematicas: number = 0;
   sumTecnologiaComputacion: number = 0;
   sumCreatividadArtes: number = 0;
@@ -24,9 +23,10 @@ export class ShowResultsComponent {
   constructor(private _router: Router, private route:ActivatedRoute, private testService: TestService){
     this.route.params.subscribe(params => this.resultid = params['result']);
     this.calculate_sum();
+    this.index = this.testService.getTestIndexById(this.resultid) + 1;
   }
 
-  calculate_sum(){
+  calculate_sum() {
     const resultados = this.testService.getTestById(this.resultid);
     if (resultados) {
 

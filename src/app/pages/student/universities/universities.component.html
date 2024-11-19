@@ -1,7 +1,17 @@
 <div class="filters">
-  <h3>Filtrar universidades</h3>
+  <h3>Filtrar Universidades</h3>
   <form (submit)="applyFilters($event)">
-    <!-- Ubicación -->
+    <!-- Filtro por nombre -->
+    <label for="search">Buscar por nombre:</label>
+    <input
+      type="text"
+      id="search"
+      placeholder="Escribe el nombre de la universidad..."
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+    />
+
+    <!-- Filtros por ubicación -->
     <label for="department">Departamento:</label>
     <select id="department" [(ngModel)]="selectedFilters.department" name="department">
       <option value="Todos">Todos</option>
@@ -20,7 +30,7 @@
       <option *ngFor="let dist of districts" [value]="dist">{{ dist }}</option>
     </select>
 
-    <!-- Tipo de gestión -->
+    <!-- Filtro por tipo de gestión -->
     <label for="type">Tipo de gestión:</label>
     <select id="type" [(ngModel)]="selectedFilters.type" name="type">
       <option value="Todos">Todos</option>
@@ -28,15 +38,12 @@
       <option value="Privada">Privada</option>
     </select>
 
-    <!-- Carreras -->
+    <!-- Filtro por carreras -->
     <label for="career">Carreras:</label>
-    <input
-      type="text"
-      id="career"
-      [(ngModel)]="selectedFilters.career"
-      name="career"
-      placeholder="Buscar carrera"
-    />
+    <select id="career" [(ngModel)]="selectedFilters.career" name="career">
+      <option value="Todos">Todos</option>
+      <option *ngFor="let career of careers" [value]="career">{{ career }}</option>
+    </select>
 
     <!-- Botones -->
     <div class="buttons">
@@ -47,17 +54,27 @@
 </div>
 
 <div class="universities">
-  <h3>Lista de universidades</h3>
+  <h3>Lista de Universidades</h3>
+  <!-- Mostrar mensaje si no hay resultados -->
   <div *ngIf="filteredUniversities.length === 0" class="no-results">
     No se encontraron universidades con los filtros aplicados.
   </div>
+  <!-- Lista de universidades -->
   <ul>
     <li *ngFor="let university of filteredUniversities">
       <h4>{{ university.name }}</h4>
       <p><strong>Ubicación:</strong> {{ university.location.department }}, {{ university.location.province }}, {{ university.location.district }}</p>
       <p><strong>Tipo:</strong> {{ university.type }}</p>
-      <p><strong>Carreras:</strong> {{ university.careers.join(', ') }}</p>
+      <!--p><strong>Carreras:</strong> 
+        <span *ngFor="let faculty of university.faculties">
+          <strong>{{ faculty.name }}:</strong> {{ faculty.careers.join(', ') }}
+        </span>
+      </-->
+      <span *ngFor="let faculty of university.faculties">
+        <strong>{{ faculty.name }}, </strong> 
+      </span>
       <p>{{ university.details }}</p>
+      <button (click)="showDetails(university)">Detalles</button>
     </li>
   </ul>
 </div>

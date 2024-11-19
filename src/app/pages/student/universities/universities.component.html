@@ -1,78 +1,63 @@
-<div class="container">
-    <!-- Vista de la lista de universidades -->
-    <div *ngIf="!selectedUniversity">
-      <button class="back-button" (click)="deselectUniversity()">←</button>
-      <h1>Universidades</h1>
-      <p>Lista de universidades con las cuales tenemos convenios</p>
-  
-      <!-- Sección de filtro y búsqueda -->
-      <div class="filter-section">
-        <label for="campusFilter">Sede</label>
-        <select id="campusFilter" [(ngModel)]="selectedCampus" (change)="filterUniversities()">
-          <option value="Todos">Todos</option>
-          <option *ngFor="let campus of campuses" [value]="campus">{{ campus }}</option>
-        </select>
-  
-        <input type="text" placeholder="Buscar" [(ngModel)]="searchQuery" (input)="filterUniversities()" />
-      </div>
-  
-      <!-- Lista de universidades -->
-      <div class="universities-list">
-        <div *ngFor="let university of filteredUniversities" class="university-button" (click)="selectUniversity(university)">
-          {{ university.name }}
-        </div>
-      </div>
+<div class="filters">
+  <h3>Filtrar universidades</h3>
+  <form (submit)="applyFilters($event)">
+    <!-- Ubicación -->
+    <label for="department">Departamento:</label>
+    <select id="department" [(ngModel)]="selectedFilters.department" name="department">
+      <option value="Todos">Todos</option>
+      <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+    </select>
+
+    <label for="province">Provincia:</label>
+    <select id="province" [(ngModel)]="selectedFilters.province" name="province">
+      <option value="Todos">Todos</option>
+      <option *ngFor="let prov of provinces" [value]="prov">{{ prov }}</option>
+    </select>
+
+    <label for="district">Distrito:</label>
+    <select id="district" [(ngModel)]="selectedFilters.district" name="district">
+      <option value="Todos">Todos</option>
+      <option *ngFor="let dist of districts" [value]="dist">{{ dist }}</option>
+    </select>
+
+    <!-- Tipo de gestión -->
+    <label for="type">Tipo de gestión:</label>
+    <select id="type" [(ngModel)]="selectedFilters.type" name="type">
+      <option value="Todos">Todos</option>
+      <option value="Pública">Pública</option>
+      <option value="Privada">Privada</option>
+    </select>
+
+    <!-- Carreras -->
+    <label for="career">Carreras:</label>
+    <input
+      type="text"
+      id="career"
+      [(ngModel)]="selectedFilters.career"
+      name="career"
+      placeholder="Buscar carrera"
+    />
+
+    <!-- Botones -->
+    <div class="buttons">
+      <button type="submit">Buscar</button>
+      <button type="button" (click)="clearFilters()">Limpiar filtros</button>
     </div>
-  
-    <!-- Vista de información de la universidad seleccionada -->
-    <div *ngIf="selectedUniversity">
-      <!-- Cabecera -->
-      <header class="header">
-        <h1>Información de {{ selectedUniversity.name }}</h1>
-        <p>{{ selectedUniversity.details }}</p>
-      </header>
-  
-      <!-- Contenido principal -->
-      <div class="main-content">
-        <!-- Menú de navegación lateral -->
-        <aside class="sidebar">
-          <button class="nav-button">Descripción</button>
-          <button class="nav-button">Programas</button>
-          <button class="nav-button">Investigación</button>
-          <button class="nav-button">Admisión</button>
-          <button class="nav-button">Contacto</button>
-        </aside>
-  
-        <!-- Sección de información -->
-        <section class="info-section">
-          <!-- Descripción de la institución -->
-          <div class="info-card">
-            <h2>Descripción de la Institución</h2>
-            <p>{{ selectedUniversity.details }}</p>
-          </div>
-  
-          <!-- Aquí puedes agregar más detalles de la universidad -->
-          <div class="info-card">
-            <h2>Programas Ofrecidos</h2>
-            <p>Detalles sobre los programas ofrecidos...</p>
-          </div>
-  
-          <div class="info-card">
-            <h2>Investigación</h2>
-            <p>Detalles sobre la investigación...</p>
-          </div>
-  
-          <div class="info-card">
-            <h2>Proceso de Admisión</h2>
-            <p>Detalles sobre el proceso de admisión...</p>
-          </div>
-  
-          <div class="info-card">
-            <h2>Contacto</h2>
-            <p>Detalles de contacto...</p>
-          </div>
-        </section>
-      </div>
-    </div>
+  </form>
+</div>
+
+<div class="universities">
+  <h3>Lista de universidades</h3>
+  <div *ngIf="filteredUniversities.length === 0" class="no-results">
+    No se encontraron universidades con los filtros aplicados.
   </div>
-  
+  <ul>
+    <li *ngFor="let university of filteredUniversities">
+      <h4>{{ university.name }}</h4>
+      <p><strong>Ubicación:</strong> {{ university.location.department }}, {{ university.location.province }}, {{ university.location.district }}</p>
+      <p><strong>Tipo:</strong> {{ university.type }}</p>
+      <p><strong>Carreras:</strong> {{ university.careers.join(', ') }}</p>
+      <p>{{ university.details }}</p>
+    </li>
+  </ul>
+</div>

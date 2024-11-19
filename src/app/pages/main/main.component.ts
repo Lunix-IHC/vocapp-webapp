@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.sass'
+  styleUrl: './main.component.css'
 })
 export class MainComponent {
   constructor(private _router: Router) { }

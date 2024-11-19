@@ -11,12 +11,6 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './universities.component.html',
   styleUrls: ['./universities.component.css']
 })
-
-@Component({
-  selector: 'app-universities',
-  templateUrl: './universities.component.html',
-  styleUrls: ['./universities.component.css']
-})
 export class UniversitiesComponent implements OnInit {
   universities: University[] = [];
   filteredUniversities: University[] = [];

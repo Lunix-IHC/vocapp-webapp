@@ -12,13 +12,7 @@ interface Answer {
 })
 export class TestService {
   private currentStep = new BehaviorSubject<number>(1);
-  private answers = new BehaviorSubject<Answer[]>([
-    { q1: 0, q2: 0, q3: 0 },
-    { q1: 0, q2: 0, q3: 0 },
-    { q1: 0, q2: 0, q3: 0 },
-    { q1: 0, q2: 0, q3: 0 },
-    { q1: 0, q2: 0, q3: 0 }
-  ]);
+  private answers: number[] = Array(30).fill(1);
 
   constructor() {}
 
@@ -31,16 +25,14 @@ export class TestService {
   }
 
   getAnswers() {
-    return this.answers.asObservable();
+    return this.answers;
   }
 
-  setAnswer(step: number, question: keyof Answer, value: number) {
-    const currentAnswers = this.answers.value;
-    currentAnswers[step - 1][question] = value;
-    this.answers.next([...currentAnswers]);
-  }
-
-  getAnswer(step: number, question: keyof Answer) {
-    return this.answers.value[step - 1][question];
+  setAnswers(newAnswers: number[]): void {
+    if (newAnswers.length!=30){
+      this.answers = Array(30).fill(1);
+    }else{
+    this.answers = [...newAnswers];
+    }
   }
 }

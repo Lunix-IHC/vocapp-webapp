@@ -1,5 +1,5 @@
     <div class="container">
-        <div class="confirmation-card">
+        <div class="confirmation-card" *ngIf="!completed; else confirmationMessage">
             <!-- Header -->
        
             <div class="top">
@@ -37,6 +37,20 @@
             </div>
 
             <!-- Submit Button -->
-            <button class="submit-button">Reservar cita</button>
+            <button class="submit-button" (click)= "completeReserva()">Reservar cita</button>
         </div>
+        <ng-template #confirmationMessage>
+            <div class="signup-container">
+                <div class="header">
+                    <img src="assets/images/Logo.png" alt="Logo" class="logo" />
+                    <p>Confirmación</p>
+                </div>
+                <div class="message-box">
+                    <p>Ha confirmado su reserva con el asesor.</p>
+                </div>
+                <div class="buttons">
+                    <input class="signup" type="button" value="Aceptar" (click)="navegacionExtra()">
+                </div>
+            </div>
+        </ng-template>
     </div>

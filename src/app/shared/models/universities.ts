@@ -12,4 +12,8 @@ export interface University {
     name: string;
     careers: string[];
   }[];
+  academicOffer?: string; // Oferta académica (opcional)
+  costs?: string; // Costos (matrícula, pensiones, etc.)
+  modality?: 'Presencial' | 'Virtual' | 'Híbrida'; // Modalidad de enseñanza
+  prestige?: string; // Información sobre acreditación y prestigio
 }

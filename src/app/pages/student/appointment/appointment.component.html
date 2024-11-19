@@ -12,7 +12,7 @@
 
     <div class="search-container">
         <span class="search-icon">🔍</span>
-        <input type="text" placeholder="Buscar asesores">
+        <input type="text" placeholder="Buscar asesores" (input)="searchQuery = $event.target.value; onSearch()">
     </div>
 
     <div class="advisors-list" >
@@ -21,19 +21,19 @@
             <button class="mail-button">✉</button>
         </div>
         <div class="advisor-card" routerLink="/home/student/Confirmacion">
-            <span>Francisco Emanuel Aguilar</span>
+            <span>Luis Martin Sanchez Canaval</span>
             <button class="mail-button">✉</button>
         </div>
         <div class="advisor-card" routerLink="/home/student/Confirmacion">
-            <span>Francisco Emanuel Aguilar</span>
+            <span>Elizabeth Del Pilar Saenz Musayon</span>
             <button class="mail-button">✉</button>
         </div>
         <div class="advisor-card" routerLink="/home/student/Confirmacion">
-            <span>Francisco Emanuel Aguilar</span>
+            <span>Henry Antonio Mendoza Puerta</span>
             <button class="mail-button">✉</button>
         </div>
         <div class="advisor-card" routerLink="/home/student/Confirmacion">
-            <span>Francisco Emanuel Aguilar</span>
+            <span>Jonathan Abrahan Sueros Zarate</span>
             <button class="mail-button">✉</button>
         </div>
     </div>

@@ -1,111 +1,125 @@
-<div class="filters">
-  <h3>Filtrar Universidades</h3>
-  <form (submit)="applyFilters($event)">
-    <!-- Filtro por nombre -->
-    <label for="search">Buscar por nombre:</label>
-    <input
-      type="text"
-      id="search"
-      placeholder="Escribe el nombre de la universidad..."
-      [(ngModel)]="searchTerm"
-      name="searchTerm"
-    />
-
-    <!-- Filtros por ubicación -->
-    <label for="department">Departamento:</label>
-    <select id="department" [(ngModel)]="selectedFilters.department" name="department">
-      <option value="Todos">Todos</option>
-      <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
-    </select>
-
-    <label for="province">Provincia:</label>
-    <select id="province" [(ngModel)]="selectedFilters.province" name="province">
-      <option value="Todos">Todos</option>
-      <option *ngFor="let prov of provinces" [value]="prov">{{ prov }}</option>
-    </select>
-
-    <label for="district">Distrito:</label>
-    <select id="district" [(ngModel)]="selectedFilters.district" name="district">
-      <option value="Todos">Todos</option>
-      <option *ngFor="let dist of districts" [value]="dist">{{ dist }}</option>
-    </select>
-
-    <!-- Filtro por tipo de gestión -->
-    <label for="type">Tipo de gestión:</label>
-    <select id="type" [(ngModel)]="selectedFilters.type" name="type">
-      <option value="Todos">Todos</option>
-      <option value="Pública">Pública</option>
-      <option value="Privada">Privada</option>
-    </select>
-
-    <!-- Filtro por carreras -->
-    <label for="career">Carreras:</label>
-    <select id="career" [(ngModel)]="selectedFilters.career" name="career">
-      <option value="Todos">Todos</option>
-      <option *ngFor="let career of careers" [value]="career">{{ career }}</option>
-    </select>
-
-    <!-- Botones -->
-    <div class="buttons">
-      <button type="submit">Buscar</button>
-      <button type="button" (click)="clearFilters()">Limpiar filtros</button>
+<div class="container">
+  <main>
+    <div class="top">
+      <div class="back-arrow">
+          <img src="assets/images/flecha-izquierda.png" alt="flecha" (click)="navigateToInicio()">
+      </div>
+      <div class="title">
+          <h1>Universidades</h1>
+          <p>Busque información sobre las universidades de tu interes</p>
+      </div>
     </div>
-  </form>
-</div>
 
-<div class="universities">
-  <h3 class="universities-title">Lista de Universidades</h3>
+    <div class="filters">
+      <h3>Filtrar Universidades</h3>
+      <form (submit)="applyFilters($event)">
+        <!-- Filtro por nombre -->
+        <label for="search">Buscar por nombre:</label>
+        <input
+          type="text"
+          id="search"
+          placeholder="Escribe el nombre de la universidad..."
+          [(ngModel)]="searchTerm"
+          name="searchTerm"
+        />
 
-  <!-- Mostrar mensaje si no hay resultados -->
-  <div *ngIf="filteredUniversities.length === 0" class="no-results">
-    No se encontraron universidades con los filtros aplicados.
-  </div>
+        <!-- Filtros por ubicación -->
+        <label for="department">Departamento:</label>
+        <select id="department" [(ngModel)]="selectedFilters.department" name="department">
+          <option value="Todos">Todos</option>
+          <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+        </select>
 
-  <!-- Lista de universidades -->
-  <div *ngFor="let university of filteredUniversities">
-    <ul>
-      <li class="university-item">
-        <h3>{{ university.name }}</h3>
-        <div class="center-btn">
-          <button class="details-btn" (click)="showDetails(university)">Ver Detalles</button>
+        <label for="province">Provincia:</label>
+        <select id="province" [(ngModel)]="selectedFilters.province" name="province">
+          <option value="Todos">Todos</option>
+          <option *ngFor="let prov of provinces" [value]="prov">{{ prov }}</option>
+        </select>
+
+        <label for="district">Distrito:</label>
+        <select id="district" [(ngModel)]="selectedFilters.district" name="district">
+          <option value="Todos">Todos</option>
+          <option *ngFor="let dist of districts" [value]="dist">{{ dist }}</option>
+        </select>
+
+        <!-- Filtro por tipo de gestión -->
+        <label for="type">Tipo de gestión:</label>
+        <select id="type" [(ngModel)]="selectedFilters.type" name="type">
+          <option value="Todos">Todos</option>
+          <option value="Pública">Pública</option>
+          <option value="Privada">Privada</option>
+        </select>
+
+        <!-- Filtro por carreras -->
+        <label for="career">Carreras:</label>
+        <select id="career" [(ngModel)]="selectedFilters.career" name="career">
+          <option value="Todos">Todos</option>
+          <option *ngFor="let career of careers" [value]="career">{{ career }}</option>
+        </select>
+
+        <!-- Botones -->
+        <div class="buttons">
+          <button type="submit">Buscar</button>
+          <button type="button" (click)="clearFilters()">Limpiar filtros</button>
         </div>
+      </form>
+    </div>
 
-        <!-- Mostrar detalles si la universidad está seleccionada -->
-        <div *ngIf="selectedUniversity === university" class="university-details">
-          <p><strong>Detalles:</strong> {{ university.details }}</p>
-          <p><strong>Ubicación:</strong> {{ university.location.department }}, {{ university.location.province }}, {{ university.location.district }}</p>
-          <p><strong>Tipo de gestión:</strong> {{ university.type }}</p>
-          
-          <h4>Facultades y Carreras:</h4>
-          <div class="faculties">
-            <div *ngFor="let faculty of university.faculties" class="faculty-card">
-              <strong>{{ faculty.name }}</strong>
-              <div class="careers">
-                <button *ngFor="let career of faculty.careers" class="career-card">
-                  {{ career }}
-                </button>
+    <div class="universities">
+      <h3 class="universities-title">Lista de Universidades</h3>
+
+      <!-- Mostrar mensaje si no hay resultados -->
+      <div *ngIf="filteredUniversities.length === 0" class="no-results">
+        No se encontraron universidades con los filtros aplicados.
+      </div>
+
+      <!-- Lista de universidades -->
+      <div *ngFor="let university of filteredUniversities">
+        <ul>
+          <li class="university-item">
+            <h3>{{ university.name }}</h3>
+            <div class="center-btn">
+              <button class="details-btn" (click)="showDetails(university)">Ver Detalles</button>
+            </div>
+
+            <!-- Mostrar detalles si la universidad está seleccionada -->
+            <div *ngIf="selectedUniversity === university" class="university-details">
+              <p><strong>Detalles:</strong> {{ university.details }}</p>
+              <p><strong>Ubicación:</strong> {{ university.location.department }}, {{ university.location.province }}, {{ university.location.district }}</p>
+              <p><strong>Tipo de gestión:</strong> {{ university.type }}</p>
+              
+              <h4>Facultades y Carreras:</h4>
+              <div class="faculties">
+                <div *ngFor="let faculty of university.faculties" class="faculty-card">
+                  <strong>{{ faculty.name }}</strong>
+                  <div class="careers">
+                    <button *ngFor="let career of faculty.careers" class="career-card">
+                      {{ career }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agregar más detalles según lo requerido -->
+              <h4>Oferta Académica</h4>
+              <p>{{ university.academicOffer || 'No disponible' }}</p>
+              
+              <h4>Costos</h4>
+              <p>{{ university.costs || 'No disponible' }}</p>
+
+              <h4>Ubicación y Modalidad</h4>
+              <p>{{ university.modality || 'No disponible' }}</p>
+
+              <h4>Prestigio y Acreditación</h4>
+              <p>{{ university.prestige || 'No disponible' }}</p>
+
+              <div class="center-btn">
+                <button class="close-btn" (click)="closeDetails()">Cerrar</button>
               </div>
             </div>
-          </div>
-
-          <!-- Agregar más detalles según lo requerido -->
-          <h4>Oferta Académica</h4>
-          <p>{{ university.academicOffer || 'No disponible' }}</p>
-          
-          <h4>Costos</h4>
-          <p>{{ university.costs || 'No disponible' }}</p>
-
-          <h4>Ubicación y Modalidad</h4>
-          <p>{{ university.modality || 'No disponible' }}</p>
-
-          <h4>Prestigio y Acreditación</h4>
-          <p>{{ university.prestige || 'No disponible' }}</p>
-
-          <div class="center-btn">
-            <button class="close-btn" (click)="closeDetails()">Cerrar</button>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
 </div>

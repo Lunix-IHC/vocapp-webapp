@@ -1,0 +1,139 @@
+.frame h2{
+  color:#009FB7;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.bg-red {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px;
+}
+
+.bg-yellow {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px;
+}
+
+.bg-blue {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  background-color: #009FB7;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Reset y estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.icons i {
+  font-size: 24px;
+  margin-left: 16px;
+  color: #009FB7;
+  cursor: pointer;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #005d77;
+  font-size: 20px;
+}
+
+/* Tarjeta de universidad */
+.university-card {
+  padding: 12px;
+  margin: 16px 0;
+  background-color: #d0d7ef;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+/* Título de sección */
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Caja de información (ubicación, costos, programas) */
+.info-box {
+  margin-bottom: 12px;
+}
+
+.info-box label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.info-box p {
+  font-size: 16px;
+  color: #333;
+  padding: 8px;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Botón de volver */
+button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #009FB7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #00bad7;
+}
+

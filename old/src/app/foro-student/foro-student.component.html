@@ -1,0 +1,204 @@
+<div *ngIf="currentRoute === 'home'" class="frame">
+    <div class="frame">
+        <div class="profile">
+            <h2>Jon Doe</h2>
+            <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png" alt="Profile Picture" class="profile-pic">
+        </div>
+        <div class="menu">
+            <button (click)="navigateToTest()">Test vocacional</button>
+            <button (click)="navigateToCommunity()">Comunidad</button>
+            <button (click)="navigateToExplorer()">Explorador de carreras</button>
+            <button (click)="navigateToSolicitarCita()">Solicitar cita</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="currentRoute === 'community'" class="frame">
+    <div class="frame">
+        <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png" alt="Profile Picture" class="profile-pic">
+        <h2>Comunidad</h2>
+        <div class="menu">
+            <button (click)="navigateToForos()">Foros</button>
+            <button (click)="navigateToWorkShops()">Talleres vocacionales</button>
+            <button (click)="navigateToStories()">Relatos laborales</button>
+        </div>
+        <div class="volver" (click)="navigateToHome()">Volver</div>
+    </div>
+
+</div>
+
+<div *ngIf="currentRoute === 'forums'" class="frame">
+    <div class="frame">
+        <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png" alt="Profile Picture" class="profile-pic">
+        <h2>Foros</h2>
+        <div class="menu">
+            <button routerLink="/orientation" (click)="navigateToForumPost()">Orientación vocacional</button>
+            <button routerLink="/careers" (click)="navigateToForumPost()">Carreras</button>
+            <button routerLink="/experience" (click)="navigateToForumPost()">Experiencia</button>
+        </div>
+        <div class="volver" (click)="navigateToCommunity()">Volver</div>
+    </div>
+
+</div>
+<div *ngIf="currentRoute ==='forum-post'" class="frame">
+    <div class="ui minimal comments">
+        <h3 class="ui dividing header">
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Comentarios</font>
+            </font>
+        </h3>
+        <div class="comment">
+            <a class="avatar">
+                <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png">
+            </a>
+            <div class="content">
+                <a class="author">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Mate</font>
+                    </font>
+                </a>
+                <div class="metadata">
+                    <span class="date">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Hoy a las 17:42</font>
+                        </font>
+                    </span>
+                </div>
+                <div class="text">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            ¡Qué artístico!
+                        </font>
+                    </font>
+                </div>
+                <div class="actions">
+                    <a class="reply">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Responder</font>
+                        </font>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="comment">
+            <a class="avatar">
+                <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png">
+            </a>
+            <div class="content">
+                <a class="author">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Elliot Fu</font>
+                    </font>
+                </a>
+                <div class="metadata">
+                    <span class="date">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Ayer a las 12:30AM</font>
+                        </font>
+                    </span>
+                </div>
+                <div class="text">
+                    <p>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Esto ha sido muy útil para mi investigación. ¡Gracias
+                                también!</font>
+                        </font>
+                    </p>
+                </div>
+                <div class="actions">
+                    <a class="reply">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Responder</font>
+                        </font>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="comment">
+            <a class="avatar">
+                <img
+                    src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png">
+            </a>
+            <div class="content">
+                <a class="author">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Jenny Hess</font>
+                    </font>
+                </a>
+                <div class="metadata">
+                    <span class="date">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">En este momento</font>
+                        </font>
+                    </span>
+                </div>
+                <div class="text">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            Elliot, siempre tienes toda la razón :)
+                        </font>
+                    </font>
+                </div>
+                <div class="actions">
+                    <a class="reply">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Responder</font>
+                        </font>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="comment">
+            <a class="avatar">
+                <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png">
+            </a>
+            <div class="content">
+                <a class="author">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Joe Henderson</font>
+                    </font>
+                </a>
+                <div class="metadata">
+                    <span class="date">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Hace 5 días</font>
+                        </font>
+                    </span>
+                </div>
+                <div class="text">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            Amigo, esto es genial. Muchas gracias.
+                        </font>
+                    </font>
+                </div>
+                <div class="actions">
+                    <a class="reply">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Responder</font>
+                        </font>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <form class="ui reply form">
+            <div class="field">
+                <textarea></textarea>
+            </div>
+            <div class="ui blue labeled submit icon button" (click)="navigateToForos()">
+                <i class="icon edit"></i>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Enviar
+                    </font>
+                </font>
+            </div>
+            <div class="ui blue labeled submit icon button2" (click)="navigateToForos()">
+                <i class="icon edit"></i>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Cancelar
+                    </font>
+                </font>
+            </div>
+        </form>
+    </div>
+</div>

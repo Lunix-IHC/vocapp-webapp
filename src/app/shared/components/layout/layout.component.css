@@ -1,0 +1,10 @@
+.drawer-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1rem;
+}
+  

@@ -24,7 +24,7 @@ export class RegistroOrientadorComponent {
   onSubmit() {
     if (this.registroForm.valid) {
       console.log('Formulario enviado:', this.registroForm.value);
-      // Aquí iría la lógica para enviar los datos al servidor
+      
     }
   }
 

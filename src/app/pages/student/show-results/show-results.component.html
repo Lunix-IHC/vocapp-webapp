@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="card">
+        <div class="top">
+            <div class="back-arrow">
+                <img src="assets/images/flecha-izquierda.png" alt="flecha" routerLink="/home/student/test">
+            </div>
+            <div class="title">
+                <h1>RESULTADOS</h1>
+                <p>Resultados del test número {{index}}</p>
+            </div>
+        </div>
+
+        <div class="content">
+        <div class="skills">
+            <div class="skill">
+                <label>Creatividad y Artes</label>
+                <div class="progress">
+                    <div class="bar" style="width: {{sumCreatividadArtes*100/30 + '%'}};"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <label>Ciencias y Matemáticas</label>
+                <div class="progress">
+                    <div class="bar" style="width: {{sumCienciasMatematicas*100/30 + '%'}};"></div>
+                </div>
+            </div> 
+            <div class="skill">
+                <label>Comunicación y Relaciones Humanas</label>
+                <div class="progress">
+                    <div class="bar" style="width: {{sumComunicacionRelaciones*100/30 + '%'}};"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <label>Negocios y Emprendimiento</label>
+                <div class="progress">
+                    <div class="bar" style="width: {{sumNegociosEmprendimiento*100/30 + '%'}};"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <label>Tecnología y Computación</label>
+                <div class="progress">
+                    <div class="bar" style="width: {{sumTecnologiaComputacion*100/30 + '%'}};"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <label>Ciencias Sociales y Humanidades</label>
+                <div class="progress">
+                    <div class="bar" style="width: {{sumCienciasSociales*100/30 + '%'}};"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="personality">
+            <h3>PERSONALIDAD</h3>
+            <div class="traits">
+            <span class="trait">INTROVERTIDO</span>
+            <span class="trait">PERCEPTIVO</span>
+            <span class="trait">INTUITIVO</span>
+            <span class="trait">PENSATIVO</span>
+            </div>
+        </div>
+        </div>
+        <footer>
+        <button class="continue-button" (click)="navigateToResultadosGuardados()">Continuar</button>
+        </footer>
+    </div>
+</div>

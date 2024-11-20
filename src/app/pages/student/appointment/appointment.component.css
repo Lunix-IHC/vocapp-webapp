@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.top {
+    display: flex;
+    text-align: left;
+}
+
+.back-arrow {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin: 10px;
+}  
+
+img {
+    max-width: 100%;
+}
+
+.back-arrow:hover {
+    background-color: #0000003f;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+
+header {
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #0099ff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.advisors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.advisor-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s;
+}
+
+.advisor-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.mail-button {
+    background: none;
+    border: none;
+    color: #0099ff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mail-button:hover {
+    color: #007acc;
+}

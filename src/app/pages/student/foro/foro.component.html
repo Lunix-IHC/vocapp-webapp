@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="foro-container">
+    <div class="sidebar">
+      <div class="back-arrow"><img src="assets/images/flecha-izquierda.png" routerLink="/home/student/community"></div>
+      <button class="forum-button">Foro UPC</button>
+      <button class="forum-button">Foro ULima</button>
+      <button class="forum-button">Foro UP</button>
+      <button class="forum-button">Foro Ingeniería</button>
+      <button class="forum-button">Foro Ciencias de la Salud</button>
+      <button class="forum-button">Foro Arquitectura</button>
+    </div>
+
+    <div class="chat-area">
+      <div class="chat-header">Foro General</div>
+      <div class="chat-messages">
+        <div *ngFor="let message of messages" class="message">
+          <img src="assets/images/profile.png" alt="Avatar" class="avatar">
+          <div class="message-text">{{ message.text }}</div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" (keydown.enter)="sendMessage()" [(ngModel)]="newMessage" placeholder="Escribe un mensaje">
+        <button class="send-button" (click)="sendMessage()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+  

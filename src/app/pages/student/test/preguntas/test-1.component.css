@@ -1,0 +1,157 @@
+
+.top {
+    display: flex;
+    text-align: left;
+}
+
+.back-arrow {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin: 10px;
+}  
+
+img {
+    max-width: 100%;
+}
+
+.back-arrow:hover {
+    background-color: #0000003f;
+}
+
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    /* height: 85vh; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    font-family: Arial;
+}
+
+
+.question-container {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    min-width: 600px;
+}
+
+.question {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Estilos del slider */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slider-labels {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.slider {
+    width: 100%;
+    margin: 10px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #01A7C2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #01A7C2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo del valor */
+.slider-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.button-back {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.button-back:hover {
+    background-color: #e0e0e0;
+}
+
+.button-next {
+    background-color: #01A7C2;
+    color: white;
+}
+
+.button-next:hover {
+    background-color: #0092AA;
+}

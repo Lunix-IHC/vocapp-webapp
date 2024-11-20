@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background-color: #f5f5f5;
+}
+
+.container {
+  font-family: Arial;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.session-time {
+  
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.student-name {
+  font-weight: 500;
+}
+
+.session-type {
+  
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}

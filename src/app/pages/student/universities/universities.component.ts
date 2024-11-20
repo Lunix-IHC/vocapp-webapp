@@ -3,6 +3,7 @@ import { UniversitiesService } from '../../../shared/services/universities.servi
 import { University } from '../../../shared/models/universities';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-universities',
@@ -32,7 +33,7 @@ export class UniversitiesComponent implements OnInit {
     faculty: 'Todos'
   };
 
-  constructor(private universitiesService: UniversitiesService) {}
+  constructor(private _router: Router, private universitiesService: UniversitiesService) {}
 
   ngOnInit(): void {
     this.universitiesService.getUniversities().subscribe((data) => {
@@ -88,5 +89,9 @@ export class UniversitiesComponent implements OnInit {
   // Cerrar los detalles de la universidad
   closeDetails(): void {
     this.selectedUniversity = null;
+  }
+
+  navigateToInicio() {
+    this._router.navigate(['/home/student/inicio'])
   }
 }
